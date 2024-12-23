@@ -1,0 +1,30 @@
+site_name: Exposee
+repo_url: https://github.com/dneumnn/RAKIPOEV
+# repo_icon: fontawesome/brands/gitlab
+nav:
+  - Referenzarchitektur: architecture.md
+  - Referenzimplementierung: implementation.md
+  - About: about.md
+theme:
+  name: material
+  locale: de
+  language: de
+  
+  logo: assets/flag.png
+  favicon: assets/favicon.png
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Wechsle zum Dunkel-Modus
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Wechsle in den Hell-Modus
+
+extra_css:
+  - stylesheets/extra.css
