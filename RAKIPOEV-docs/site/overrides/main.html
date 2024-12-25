@@ -1,0 +1,18 @@
+<!-- docs/overrides/main.html -->
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ base_url }}/css/stylesheets/extra.css">
+{% endblock %}
+
+{% block header %}
+  <header>
+    <div class="custom-header">
+<!--      <img src="{{ base_url }}/images/logo.png" alt="Logo" class="logo">-->
+      <h1>Referenzarchitektur KI-Plattform für die Öffentliche Verwaltung</h1>
+      <h2>Dominik Neumann, Tobias Häusser und Dr. Michael Wissen</h2>
+    </div>
+  </header>
+  {{ super() }}
+{% endblock %}

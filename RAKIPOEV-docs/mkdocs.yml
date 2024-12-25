@@ -1,4 +1,5 @@
 site_name: Exposee
+
 repo_url: https://github.com/dneumnn/RAKIPOEV
 # repo_icon: fontawesome/brands/gitlab
 nav:
@@ -9,6 +10,11 @@ theme:
   name: material
   locale: de
   language: de
+  custom_dir: docs/overrides
+  features: 
+    - navigation.tabs
+  plugins: 
+    - search 
   
   logo: assets/flag.png
   favicon: assets/favicon.png
@@ -25,6 +31,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Wechsle in den Hell-Modus
-
+extra: 
+  generator: false 
+  last_updated: true
 extra_css:
   - stylesheets/extra.css
