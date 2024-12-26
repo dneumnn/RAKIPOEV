@@ -11,10 +11,10 @@ theme:
   locale: de
   language: de
   custom_dir: docs/overrides
-  features: 
-    - navigation.tabs
-  plugins: 
-    - search 
+  #features: 
+  #  - navigation.tabs
+  #plugins: 
+  #  - search 
   
   logo: assets/flag.png
   favicon: assets/favicon.png

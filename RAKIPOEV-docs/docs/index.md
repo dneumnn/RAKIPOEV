@@ -1,6 +1,6 @@
 # Exposee
 
-Analog zur Architektur von Gebäuden stelen wir eine Bauprojektdarstellung einer KI-Plattform für die Öffentliche Verwaltung vor. Das Exposee beschreibt das Warum, das Was und das Wie in Form einer Referenzarchitektur sowie einer Referenzimplementierung.
+Analog zur Architektur von Gebäuden stellen wir eine Bauprojektdarstellung einer KI-Plattform für die Öffentliche Verwaltung vor. Das Exposee beschreibt das Warum, das Was und das Wie in Form einer Referenzarchitektur sowie einer Referenzimplementierung.
 
 ## Warum
 
@@ -42,3 +42,5 @@ Wesentliche Bestandteile der KI-Plattform sind:
 Horienzontle und Vertikale Anwendungsfälle entstehen durch geeignete Kombination der Bestandteile und können basierend auf der Referenzarchitektur beschrieben und implementiert werden. Blaupausen und Referenzimplementierungen werden in der Community geshared.
 
 ## Wie
+
+Die Referenzarchitektur beinhaltet Design-Vorschläge für die einzelnen Komponenten.
