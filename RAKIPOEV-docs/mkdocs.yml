@@ -3,9 +3,13 @@ site_name: Exposee
 repo_url: https://github.com/dneumnn/RAKIPOEV
 # repo_icon: fontawesome/brands/gitlab
 nav:
-  - Referenzarchitektur: architecture.md
-  - Referenzimplementierung: implementation.md
-  - About: about.md
+    - Referenzarchitektur: 
+      - Anforderungen: anforderungen.md
+      - High-Level-Architecture: architecture.md
+      - Building Blocks: buildingBlocks.md
+
+    - Referenzimplementierung: implementation.md
+    - About: about.md
 theme:
   name: material
   locale: de
@@ -13,8 +17,9 @@ theme:
   custom_dir: docs/overrides
   #features: 
   #  - navigation.tabs
-  #plugins: 
+  plugins: 
   #  - search 
+    - drawio_file    
   
   logo: assets/flag.png
   favicon: assets/favicon.png
