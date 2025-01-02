@@ -24,6 +24,7 @@ conda create --name "mkdocs" python=3.11
 conda activate mkdocs
 pip install mkdocs
 pip install mkdocs-material
+pip install mkdocs-drawio
 ```
 
 Erstelle einen neue leere Dokumentaion. Nicht notwendig, da im Repo bereits vorhanden.
