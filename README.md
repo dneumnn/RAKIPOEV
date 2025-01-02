@@ -26,6 +26,8 @@ pip install mkdocs
 pip install mkdocs-material
 pip install mkdocs-drawio
 ```
+Für das draw.io-PlugIn müssen die CPP Build Tools installiert sein.
+(https://visualstudio.microsoft.com/de/visual-cpp-build-tools/)
 
 Erstelle einen neue leere Dokumentaion. Nicht notwendig, da im Repo bereits vorhanden.
 
