@@ -1,8 +1,6 @@
 # High-Level-Architecture
 
-
 ![](drawio/HighLevelArchitecture.drawio)
-
 
 ### Applications
 
