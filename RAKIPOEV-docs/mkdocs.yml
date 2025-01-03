@@ -4,7 +4,11 @@ repo_url: https://github.com/dneumnn/RAKIPOEV
 # repo_icon: fontawesome/brands/gitlab
 nav:
   - Referenzarchitektur: architecture.md
-  - Referenzimplementierung: implementation.md
+  - Referenzimplementierung: 
+    - A: implementation.md
+    - B: b.md
+      - BB: bb.md
+    - C: c.md
   - About: about.md
 theme:
   name: material
