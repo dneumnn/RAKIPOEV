@@ -9,6 +9,7 @@ nav:
     - Building Blocks: buildingBlocks.md
     - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md
+    - Glossar: glossar.md
     - About: about.md
 
 theme:
@@ -45,11 +46,11 @@ extra_css:
 markdown_extensions:
   - sane_lists
   - attr_list
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+ # - pymdownx.superfences:
+ #     custom_fences:
+ #       - name: mermaid
+ #         class: mermaid
+ #         format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_javascript:
   - https://viewer.diagrams.net/js/viewer-static.min.js
@@ -59,4 +60,4 @@ plugins:
     - drawio:
         tooltips: true
         border: 20
-    - mermaid2
+#    - mermaid2
