@@ -1,12 +1,14 @@
 # High-Level-Architecture
 
-Folgende Darstellung zeigt ...
+Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 "Schichten", die näher beschrieben werden.
 
 ![](drawio/HighLevelArchitecture.drawio)
 
 ## Frontends
 
 ## Services
+
+[RAG](glossar.md#RAG)
 
 ## Modelle
 
