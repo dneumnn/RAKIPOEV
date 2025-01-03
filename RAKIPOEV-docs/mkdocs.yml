@@ -6,7 +6,8 @@ nav:
     - Referenzarchitektur: 
       - Anforderungen: anforderungen.md
       - High-Level-Architecture: architecture.md
-      - Building Blocks: buildingBlocks.md
+    - Building Blocks: buildingBlocks.md
+    - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md
     - About: about.md
 
@@ -49,7 +50,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-          
+
 extra_javascript:
   - https://viewer.diagrams.net/js/viewer-static.min.js
   - /javascript/drawio-reload.js

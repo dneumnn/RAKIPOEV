@@ -1,6 +1,15 @@
 # High-Level-Architecture
 
+Folgende Darstellung zeigt ...
+
 ![](drawio/HighLevelArchitecture.drawio)
+
+## Frontends
+
+## Services
+
+## Modelle
+
 
 ### Applications
 
