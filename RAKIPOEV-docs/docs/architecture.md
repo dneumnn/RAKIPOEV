@@ -4,6 +4,8 @@ Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten, di
 
 ![](drawio/HighLevelArchitecture.drawio)
 
+Die (Referenz-)implkementierung sollte so gestaltet werden, dass alle Komponenten als cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.
+
 ## Frontends
 
 Die Referenzarchitektur sieht verschiedene Frontends vor. Als "offensichtlichste" seien genannt 
