@@ -24,9 +24,12 @@ conda create --name "mkdocs" python=3.11
 conda activate mkdocs
 pip install mkdocs
 pip install mkdocs-material
+pip install mkdocs-drawio
 ```
+Für das draw.io-PlugIn müssen die Microsoft Build Tools für C++ installiert sein.
+(https://visualstudio.microsoft.com/de/visual-cpp-build-tools/)
 
-Erstelle einen neue leere Dokumentaion. Nicht notwendig, da im Repo bereits vorhanden.
+Erstelle einen neue leere Dokumentation. Nicht notwendig, da im Repo bereits vorhanden.
 
 ```bash
 cd RAKIPOEV-docs

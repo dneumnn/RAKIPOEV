@@ -3,23 +3,22 @@ site_name: Exposee
 repo_url: https://github.com/dneumnn/RAKIPOEV
 # repo_icon: fontawesome/brands/gitlab
 nav:
-  - Referenzarchitektur: architecture.md
-  - Referenzimplementierung: 
-    - A: implementation.md
-    - B: b.md
-      - BB: bb.md
-    - C: c.md
-  - About: about.md
+
+    - Referenzarchitektur: 
+      - Anforderungen: anforderungen.md
+      - High-Level-Architecture: architecture.md
+      - Building Blocks: buildingBlocks.md
+    - Referenzimplementierung: implementation.md
+    - About: about.md
+
 theme:
   name: material
   locale: de
   language: de
   custom_dir: docs/overrides
-  #features: 
-  #  - navigation.tabs
-  #plugins: 
-  #  - search 
-  
+  features: 
+    - navigation.instant
+   
   logo: assets/flag.png
   favicon: assets/favicon.png
 
@@ -35,11 +34,29 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Wechsle in den Hell-Modus
+
 extra: 
   generator: false 
   last_updated: true
+
 extra_css:
-  - stylesheets/extra.css
+  - /css/stylesheets/extra.css
+
 markdown_extensions:
   - sane_lists
   - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+          
+extra_javascript:
+  - https://viewer.diagrams.net/js/viewer-static.min.js
+  - /javascript/drawio-reload.js
+
+plugins:
+    - drawio:
+        tooltips: true
+        border: 20
+    - mermaid2
