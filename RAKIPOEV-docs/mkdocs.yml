@@ -7,8 +7,10 @@ nav:
     - Referenzarchitektur: 
       - Anforderungen: anforderungen.md
       - High-Level-Architecture: architecture.md
-      - Building Blocks: buildingBlocks.md
+    - Building Blocks: buildingBlocks.md
+    - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md
+    - Glossar: glossar.md
     - About: about.md
 
 theme:
@@ -17,7 +19,12 @@ theme:
   language: de
   custom_dir: docs/overrides
   features: 
-    - navigation.instant
+#    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.path
+    - toc.integrate
    
   logo: assets/flag.png
   favicon: assets/favicon.png
@@ -45,12 +52,17 @@ extra_css:
 markdown_extensions:
   - sane_lists
   - attr_list
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-          
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+ # - pymdownx.superfences:
+ #     custom_fences:
+ #       - name: mermaid
+ #         class: mermaid
+ #         format: !!python/name:pymdownx.superfences.fence_code_format
+
 extra_javascript:
   - https://viewer.diagrams.net/js/viewer-static.min.js
   - /javascript/drawio-reload.js
@@ -59,4 +71,4 @@ plugins:
     - drawio:
         tooltips: true
         border: 20
-    - mermaid2
+#    - mermaid2

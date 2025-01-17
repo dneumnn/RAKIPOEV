@@ -30,3 +30,9 @@
 .custom-header .logo {
   max-height: 50px;
 }
+
+.textlink {
+  text-decoration: underline; 
+  font-weight: bold;
+  color: blue
+}
