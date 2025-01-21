@@ -4,10 +4,16 @@ repo_url: https://github.com/dneumnn/RAKIPOEV
 # repo_icon: fontawesome/brands/gitlab
 nav:
 
-    - Referenzarchitektur: 
-      - Anforderungen: anforderungen.md
-      - High-Level-Architecture: architecture.md
-    - Building Blocks: buildingBlocks.md
+    - Anforderungen:
+      - Allgemeine Anforderungen: allgemeine_anforderungen.md
+      - KI-Prinzipien: ki_prinzipien.md
+      - Funktionale Anforderungen: funktionale_anforderungen.md
+    - Referenzarchitektur: architecture.md
+    - Building Blocks:
+      - Frontends: frontends.md
+      - Services: services.md
+      - Models: models.md
+      - Cross-Funktional: cross_functional.md
     - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md
     - Glossar: glossar.md
