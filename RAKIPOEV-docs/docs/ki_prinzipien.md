@@ -1,4 +1,4 @@
-# Prinzipien der KI-Architektur / Nicht-Funktionale Anforderungen
+# Leitlinien der KI-Architektur
 
 ## Modularisierung und Service-orientierte Architektur
 
