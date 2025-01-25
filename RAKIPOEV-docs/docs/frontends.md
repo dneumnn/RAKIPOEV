@@ -40,11 +40,17 @@ Dabei werden folgende Anforderungen an die Benutzerschnittstelle gestellt:
 
 **[Quora POE](https://poe.com)**
 
+Der Chat Client Poe von Quora zeuchnet sich durch Erweiterbarkeit mittels Plugins aus. Da es sich hier um closed-source handelt, dient dieser Eintrag nur zu Demonstrationszwecken für einen Frontend mit Plugin-Funktionalität.
+
 | Anforderung | Grad der Füllung |
 | --- | ----------- |
 | Open Source | closed source, deshalb nur als Beispiel gelistet |
 | Erweiterbarkeit durch Plugins | vorhanden |
 
+Weitere erwähnenswerte open source Frontends sind:
+
+- Der Chat Client von [RagFlow](https://ragflow.io) sowie
+- das [LibreChat](https://www.librechat.ai).
 
 ## Admin-Frontends
 
@@ -53,4 +59,4 @@ Dabei werden folgende Anforderungen an die Benutzerschnittstelle gestellt:
 
 ## Office-Plugins
 
-## Anbindung von Fachverefahren über API
+## Anbindung von Fachverfahren über API
