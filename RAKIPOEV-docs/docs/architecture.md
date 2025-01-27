@@ -8,7 +8,9 @@ Die (Referenz-)implkementierung sollte so gestaltet werden, dass alle Komponente
 
 ## Frontends
 
-Die Referenzarchitektur sieht verschiedene Frontends vor. Als "offensichtlichste" seien genannt 
+Die Referenzarchitektur sieht verschiedene Frontends vor. Der Frontend-Layer umfasst die Benutzeroberflächen für Administratoren und Endnutzer, welche auf die KI-Dienste zugreifen und sie verwalten können.
+
+Als "offensichtlichste" seien genannt:
 
 - ein Chat-Frontend,
 - Fachverfahren
@@ -30,4 +32,3 @@ Folgende erste Servicearten sind identifziert:
 * Agents
 
 ## Modelle
-

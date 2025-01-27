@@ -10,10 +10,14 @@ nav:
       - Funktionale Anforderungen: funktionale_anforderungen.md
     - Referenzarchitektur: architecture.md
     - Building Blocks:
-      - Frontends: frontends.md
-      - Services: services.md
-      - Models: models.md
-      - Cross-Funktional: cross_functional.md
+      - Chat-Frontends: building_blocks/frontends/chat.md
+      - Admin-Frontends: building_blocks/frontends/admin.md
+      - Office-Plugins: building_blocks/frontends/office.md
+      - Services: building_blocks/services/services.md
+      - Model Registry: building_blocks/modelle/model_registry.md
+      - LLM-Gateway: building_blocks/modelle/llm_gateway.md
+      - Inference-Engines: building_blocks/modelle/inference.md
+      - Cross-Funktional: building_blocks/cross_functional/cross_functional.md
     - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md
     - Glossar: glossar.md
