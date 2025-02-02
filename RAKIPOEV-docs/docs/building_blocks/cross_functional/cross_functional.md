@@ -6,7 +6,6 @@ Zur Anbindung der Plattform empfiehlt sich im Sinne einer konsequenten Open-Sour
 
 ## Prompt-Store
 
-
 ## ML Operations
 
 Dieser Layer umfasst die maschinellen Lernprozesse, die zur Entwicklung und Bereitstellung von
@@ -38,3 +37,5 @@ Die zentrale Plattformkomponente, die für das Management, die Entwicklung und B
 - Knowledge Base: Diese umfasst verschiedene Datenbanken wie Vektor-DB, Graph-DB und relationale DBs zur Speicherung und Nutzung von Wissensressourcen.
 
 ## Kompositions-Fähigkeit
+
+## Observability
