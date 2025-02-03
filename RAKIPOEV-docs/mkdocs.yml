@@ -17,6 +17,7 @@ nav:
       - Model Registry: building_blocks/modelle/model_registry.md
       - LLM-Gateway: building_blocks/modelle/llm_gateway.md
       - Inference-Engines: building_blocks/modelle/inference_engines.md
+      - Observability: building_blocks/cross_functional/observability.md
       - Cross-Funktional: building_blocks/cross_functional/cross_functional.md
     - Use-Case-Umsetzung: UseCaseUmsetzung.md
     - Referenzimplementierung: implementation.md

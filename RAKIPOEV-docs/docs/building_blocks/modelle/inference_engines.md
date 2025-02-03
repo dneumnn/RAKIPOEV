@@ -37,7 +37,7 @@ Inference Server:
 
 - HTTP/gRPC-APIs: z.B. OpenAI API
 - Verwaltung der Anfrage-Warteschlangen (Queuing)
-- Multimodell-Serving
+- Multi-Modell-Unterstützung
 - Multi-Engine-Unterstützung
 
 ## Gängige Inference Server / Engines
