@@ -19,16 +19,20 @@ Als "offensichtlichste" seien genannt:
 
 Alle Frontends können über das API-Gateway auf die verschiedenen Services zugreifen.
 
-## Services
+## Services-Layer
 
-Die Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.
+Der Services-Layer beinheltet zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.
 
 Folgende erste Servicearten sind identifziert:
 
-* **Model Context Protocol**
-* **RAG**: Über [<span class="textlink">RAGs</span>](glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
-* **Tools:** sind verschiedene Werkzeuge, die keinen Zugriff auf [<span class="textlink">Large Language Models</span>](glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
-* **Task based Services:** stellen auf BAsis von RAGs oder LLMs Funktionen zur Verfügung. * Beispiele: Summarization, Planning und Reasoning"*.
-* Agents
+- **RAG**: Über [RAGs](glossar.md#Test-2) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
 
-## Modelle
+- **Tools:** sind verschiedene Werkzeuge, die keinen Zugriff auf [<span class="textlink">Large Language Models</span>](glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
+
+- **Task based Services:** stellen auf Basis von LLMs Funktionen zur Verfügung. *Beispiele: Summarization, Planning und Reasoning"*.
+
+- **Agents**  sind Services, die autonom oder semi-autonom eine Aufgabe erfüllen. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen.
+
+## Inference-Layer
+
+Der Inference Layer ist für die Verwaltung und Ausführung von Modellen verantwortlich.

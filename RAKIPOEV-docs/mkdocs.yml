@@ -1,9 +1,9 @@
 site_name: Exposee
 
 repo_url: https://github.com/dneumnn/RAKIPOEV
-# repo_icon: fontawesome/brands/gitlab
-nav:
 
+nav:
+    - index.md
     - Anforderungen:
       - Allgemeine Anforderungen: allgemeine_anforderungen.md
       - KI-Prinzipien: ki_prinzipien.md
@@ -19,18 +19,18 @@ nav:
       - Inference-Engines: building_blocks/modelle/inference_engines.md
       - Observability: building_blocks/cross_functional/observability.md
       - Cross-Funktional: building_blocks/cross_functional/cross_functional.md
-    - Use-Case-Umsetzung: UseCaseUmsetzung.md
+    - Use-Case-Umsetzung: use_cases_umsetzung.md
     - Referenzimplementierung: implementation.md
     - Glossar: glossar.md
     - About: about.md
 
 theme:
   name: material
-  locale: de
+  # locale: de
   language: de
   custom_dir: docs/overrides
   features: 
-#    - navigation.instant
+  #  - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
@@ -83,3 +83,5 @@ plugins:
         tooltips: true
         border: 20
 #    - mermaid2
+# use pip install mkdocs-autorefs
+#    - autorefs # this could fix the problem with anchrs https://mkdocstrings.github.io/autorefs/
