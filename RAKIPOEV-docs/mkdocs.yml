@@ -8,20 +8,22 @@ nav:
       - Allgemeine Anforderungen: allgemeine_anforderungen.md
       - KI-Prinzipien: ki_prinzipien.md
       - Funktionale Anforderungen: funktionale_anforderungen.md
-    - Referenzarchitektur: architecture.md
+    - Referenzarchitektur: 
+      - High-Level-Architektur: docs/architecture/high_level_architecture.md
+      - Datenmanagement: docs/architecture/data_management.md
     - Building Blocks:
-      - Chat-Frontends: building_blocks/frontends/chat.md
-      - Admin-Frontends: building_blocks/frontends/admin.md
-      - Office-Plugins: building_blocks/frontends/office.md
-      - Services: building_blocks/services/services.md
-      - Model Registry: building_blocks/modelle/model_registry.md
-      - LLM-Gateway: building_blocks/modelle/llm_gateway.md
-      - Inference-Engines: building_blocks/modelle/inference_engines.md
-      - Observability: building_blocks/cross_functional/observability.md
-      - Cross-Funktional: building_blocks/cross_functional/cross_functional.md
+      - Chat-Frontends: docs/building_blocks/frontends/chat.md
+      - Admin-Frontends: docs/building_blocks/frontends/admin.md
+      - Office-Plugins: docs/building_blocks/frontends/office.md
+      - Services: docs/building_blocks/services/services.md
+      - Model Registry: docs/building_blocks/modelle/model_registry.md
+      - LLM-Gateway: docs/building_blocks/modelle/llm_gateway.md
+      - Inference-Engines: docs/building_blocks/modelle/inference_engines.md
+      - Observability: docs/building_blocks/cross_functional/observability.md
+      - Cross-Funktional: docs/building_blocks/cross_functional/cross_functional.md
     - Use-Case-Umsetzung: 
-      - KI-Systeme: use_cases/ki_systeme.md
-      - Vom einfachen zum komplexen: use_cases/simple_to_complex.md
+      - KI-Systeme: docs/use_cases/ki_systeme.md
+      - Vom einfachen zum komplexen: docs/use_cases/simple_to_complex.md
     - Referenzimplementierung: implementation.md
     - Glossar: glossar.md
     - About: about.md

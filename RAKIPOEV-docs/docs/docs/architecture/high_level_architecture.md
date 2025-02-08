@@ -1,12 +1,14 @@
-# High-Level-Architecture
+# High-Level-Architektur
 
-Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten, die untenstehend  näher beschrieben werden.
+Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten (Layer), die untenstehend  näher beschrieben werden.
 
-![](drawio/HighLevelArchitecture.drawio)
+![](high_level_architecture.drawio)
 
-Die (Referenz-)implkementierung sollte so gestaltet werden, dass alle Komponenten als cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.
+Die (Referenz-)implementierung sollte so gestaltet werden, dass alle Komponenten cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.
 
-## Frontends
+Komponenten der Referenzarchitektur lassen sich in drei Layer einteilen. Eine besondere Herausforderung bei der Implemetierung der verschiedenen Komponenten (Building Blocks) innerhalb der Layers liegt in der föderierten Benutzer- und Modell-Verwaltung. Diese wird im Kapitel [Datenmanagement](data_management.md) beschrieben.
+
+## Frontend-Layer
 
 Die Referenzarchitektur sieht verschiedene Frontends vor. Der Frontend-Layer umfasst die Benutzeroberflächen für Administratoren und Endnutzer, welche auf die KI-Dienste zugreifen und sie verwalten können.
 
@@ -36,3 +38,4 @@ Folgende erste Servicearten sind identifziert:
 ## Inference-Layer
 
 Der Inference Layer ist für die Verwaltung und Ausführung von Modellen verantwortlich.
+
