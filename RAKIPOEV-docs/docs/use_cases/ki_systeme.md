@@ -1,4 +1,4 @@
-# KI Use Case
+# KI Systeme und Use Cases
 
 Gemäß der KI-Definition des Europäischen Parllaments ist
 

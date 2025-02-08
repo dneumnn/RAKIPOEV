@@ -25,9 +25,9 @@ Der Services-Layer beinheltet zustandslose funktionale Bausteine die sich zu Use
 
 Folgende erste Servicearten sind identifziert:
 
-- **RAG**: Über [RAGs](glossar.md#Test-2) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
+- **RAG**: Über [RAGs](glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
 
-- **Tools:** sind verschiedene Werkzeuge, die keinen Zugriff auf [<span class="textlink">Large Language Models</span>](glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
+- **Tools:** sind verschiedene Werkzeuge, die keinen Zugriff auf [Large Language Models](glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
 
 - **Task based Services:** stellen auf Basis von LLMs Funktionen zur Verfügung. *Beispiele: Summarization, Planning und Reasoning"*.
 
