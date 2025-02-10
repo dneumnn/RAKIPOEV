@@ -43,7 +43,8 @@ Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentarisiert,
 
 Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  [Generative AI Observability](https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md) ermöglichen soll.
 
-## Typische KI Observability Tools
+## Open Source KI Observability Tools
 
 - [Langfuse](https://langfuse.com)
 - [Pydantic Logfire](https://logfire.pydantic.dev/docs/)
+- [Lunari](https://github.com/lunary-ai/lunary)

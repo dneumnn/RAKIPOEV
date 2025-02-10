@@ -42,8 +42,25 @@ Inference Server:
 
 ## Gängige Inference Server / Engines
 
-- [Ollama](https://ollama.com)
-- [vLLM](https://docs.vllm.ai/en/latest/)
+Open-Source (und Open-Weight) Modelle können in unterschiedlichen Binärformaten vorliegen:
+
+- PyTorch Format: PyTorch-Modellgewichte werden mit dem Pickle-Dienstprogramm von Python in einer bin-Datei gespeichert.
+- Safetensors Format: [Safetensors](https://github.com/huggingface/safetensors) ist ein von Hugging Face entwickeltes sicheres und schnelles Dateiformat zum Speichern und Laden von Tensoren.
+- Quantisierte Modelle: GGUF
+
+Nicht jede Inference Engine kann jedes Modell Speicher-Format verwenden.
+
+### Ollama
+
+[Ollama](https://ollama.com) ist ein in Go OpenAI kompatibler Server, der die Inference Engine [llama.cpp](https://github.com/ggerganov/llama.cpp) nutzt. llama.cpp ist eine in C/C++ geschriebene Inference Engine. llama.cpp kann Modelle ausführen, weclhe im [GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) Dateiformat vorliegen. GGUF ist ein binäres Dateifomat für Inference mit der Tensor-Bibliothek für maschinelles Lernen [GGML](https://github.com/ggml-org/ggml).
+
+### llama-cpp-python
+
+Die Python-Bindings [llama-cpp-python](https://llama-cpp-python.readthedocs.io) für llama.cpp stellen ebenfalls einen  OpenAI API kompatiblen Web-Server zur Verfügung.
+
+### vLLM
+
+[vLLM](https://docs.vllm.ai/en/latest/)
 
 Literature:
 
