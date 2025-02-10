@@ -27,13 +27,21 @@ Aktuell gibt es zwei Ansätze in der Observability. Der erste fokussiert auf das
 |Fokus| KI-System | KI Use Case |
 |-----| --------- | ----------- |
 |Traces|||
-|Metriken|||
+|Metriken|TTFT, TBT, TPS, TPOT|
 |Fehler| zur Laufzeit| Ex-Post (Evaluation, User Feddback)|
 |Anwendungsfälle| Durchsatz & Latenz | Debug Traces, Anwendungs-Benchmarking, Testen, Monitor Halluzinationen, Evaluierung |
-|Rollem| DevOps | Data Scientist, Softwareentwickler|
+|Rollen| DevOps | Data Scientist, Softwareentwickler|
 |Fokus| holistischer Blick auf das System | KI Use Case verstehen |
 
 Ziel ist es einen Observability Stack bereitzustellen, den alle wesentlichen Komponenten der KI Referenzarchitektur nutzen: Frontend, Services, LLM-Gateway und Inference Engines. Dabei werden Instrumentalisierung, Annotation (Dekoration) und Callbacks genutzt.  
+
+## Metriken
+
+- Time to First Token (TTFT)
+- Time between Tokens (TBT)
+- Tokens per Second (TPS)
+- Time per Output Token (TPOT)
+- Total Latency (Gesamtzeit, die benötigt wird, um einen Anfrage-Antwort-Zyklus abzuschliessen)
 
 ## OpenTelemetry
 
