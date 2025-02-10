@@ -48,3 +48,7 @@ Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  [Generative 
 - [Langfuse](https://langfuse.com)
 - [Pydantic Logfire](https://logfire.pydantic.dev/docs/)
 - [Lunari](https://github.com/lunary-ai/lunary)
+
+## Anbindung Guardrails
+
+Guardrails können an mehreren Stellen in der Referenzarchitektur eingebunden werden, entweder als Pipe direkt in der Chat-Anwendung oder Im LLM-Gateway.

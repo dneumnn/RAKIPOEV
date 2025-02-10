@@ -1,6 +1,9 @@
 # Ignore Mac Files
 .DS_Store
 
+# Ignore drawio bkp
+*.drawio.bkp
+
 # MkDocs
 node_modules/
 *.pack
