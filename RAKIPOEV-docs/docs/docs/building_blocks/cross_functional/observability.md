@@ -26,8 +26,8 @@ Aktuell gibt es zwei Ansätze in der Observability. Der erste fokussiert auf das
 
 |Fokus| KI-System | KI Use Case |
 |-----| --------- | ----------- |
-|Traces|||
-|Metriken|TTFT, TBT, TPS, TPOT|
+|Traces||Prompt-Tracing|
+|Metriken||Prompt-Monitoring: TTFT, TBT, TPS, TPOT|
 |Fehler| zur Laufzeit| Ex-Post (Evaluation, User Feddback)|
 |Anwendungsfälle| Durchsatz & Latenz | Debug Traces, Anwendungs-Benchmarking, Testen, Monitor Halluzinationen, Evaluierung |
 |Rollen| DevOps | Data Scientist, Softwareentwickler|
