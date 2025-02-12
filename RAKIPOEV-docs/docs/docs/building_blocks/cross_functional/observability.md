@@ -28,6 +28,8 @@ Aktuell gibt es zwei Ansätze in der Observability. Der erste fokussiert auf das
 |-----| --------- | ----------- |
 |Traces||Prompt-Tracing|
 |Metriken||Prompt-Monitoring: TTFT, TBT, TPS, TPOT|
+|||Accuracy, Toxicity, Hallucination Rate|
+|||RAG: Relevant und Präzision bezogen auf den gefundenen Kontext|
 |Fehler| zur Laufzeit| Ex-Post (Evaluation, User Feddback)|
 |Anwendungsfälle| Durchsatz & Latenz | Debug Traces, Anwendungs-Benchmarking, Testen, Monitor Halluzinationen, Evaluierung |
 |Rollen| DevOps | Data Scientist, Softwareentwickler|
@@ -35,7 +37,19 @@ Aktuell gibt es zwei Ansätze in der Observability. Der erste fokussiert auf das
 
 Ziel ist es einen Observability Stack bereitzustellen, den alle wesentlichen Komponenten der KI Referenzarchitektur nutzen: Frontend, Services, LLM-Gateway und Inference Engines. Dabei werden Instrumentalisierung, Annotation (Dekoration) und Callbacks genutzt.  
 
+## OpenTelemetry
+
+[OpenTelemetry](https://opentelemetry.io) ist eine open source Initiative, die eine Sammlung von APIs, SDKs und tools als Observability Framework bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.
+
+Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentarisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.
+
+![OpenTelemetry](opentelemetry.png)
+
+Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  [Generative AI Observability](https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md) standardisiert.
+
 ## Metriken
+
+### Prompt-Monitoring
 
 - Time to First Token (TTFT)
 - Time between Tokens (TBT)
@@ -43,19 +57,49 @@ Ziel ist es einen Observability Stack bereitzustellen, den alle wesentlichen Kom
 - Time per Output Token (TPOT)
 - Total Latency (Gesamtzeit, die benötigt wird, um einen Anfrage-Antwort-Zyklus abzuschliessen)
 
-## OpenTelemetry
+### RAG-Metriken ([ragas](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/))
 
-[OpenTelemetry](https://opentelemetry.io) ist ein open source Initiative, die eine Sammlung von APIs, SDKs und tools bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.
+- Context Precision
+- Context Recall
+- Response Relevancy
+- Faithfulness
 
-Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentarisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.
+## Open Source KI Observability Tools und Metrik-Suiten
 
-Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  [Generative AI Observability](https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md) ermöglichen soll.
+Im folgenden unterscheiden wir zwischen OpenTelemetry Observability Tools und Metrik-Suiten. 
 
-## Open Source KI Observability Tools
+### Open Source KI Observability Tools
 
 - [Langfuse](https://langfuse.com)
 - [Pydantic Logfire](https://logfire.pydantic.dev/docs/)
 - [Lunari](https://github.com/lunary-ai/lunary)
+- [OpenLit](https://openlit.io)
+- [OpenLLMetry](https://github.com/traceloop/openllmetry)
+
+#### OpenLit
+
+Openlit benennt sich selbst als Open Source Plattform (Apache 2.0 Lizenz) für AI Engineering. Enthalten sind neben OpenTelemetry-nativer Observability auch ein GPU Monitoring, ein Ansatz für Guardrails, sowie ein Prompt Management und ein Playground.
+
+Openlit unterstützt das Experimentieren mit LLMs, die Organisation und die Versionierung von Prompts.
+
+Die OpenTelemetry-native Observability hat den Fokus auf Ende-zu-Ende Monitoring inklusive LLMs, Vektor Datenbanken, RAG & Agent Frameworks und GPUs.
+
+Openlit folgt den [Semantic Conventions von OpenTelemetry](https://github.com/open-telemetry/semantic-conventions/tree/main/docs/gen-ai).
+
+#### OpenLLMetry
+
+OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an an beliebige Observability-Lösungen, welche auf OpenTelemetry aufseten angeschlossen werden.
+
+#### Langfuse
+
+Langfuse ist eine Open Source Engineering Plattform für das Tracen und Evaluieren von LLM-Anwendungen. Es unterstützt zusätzlich durch ein Prompt-Management. Langfuse ist zwar Open Source, aber nur bedingt [frei](https://github.com/langfuse/langfuse?tab=License-1-ov-file#readme) nutzbar. Teile von Langfuse stehen unterliegen einer kommerziellen Lizenz.
+
+Langfuse kann it und ohne OpenTelemetry Unterstützung verwendet werden.
+
+### Metrik-Suiten
+
+- [ragas](https://github.com/explodinggradients/ragas)
+- [deepeval](https://github.com/confident-ai/deepeval)
 
 ## Anbindung Guardrails
 
