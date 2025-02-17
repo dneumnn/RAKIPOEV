@@ -2,11 +2,11 @@
 
 ## Server und Engine
 
-Die Nutzung eines Modells (LLMs) zur Inference kann gtundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmerts sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prdiction , sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.
+Die Nutzung eines Modells (LLMs) zur Inference kann grundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmerts sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prediction, sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.
 
 Die Inference Engine kann eine Vielzahl von Optimierungstechniken unterstützen. Im Kern handelt es sich um Python- oder C++-Bibliotheken. Sie sorgen für das Stapeln der Anfragen (Batching), die von den Benutzern an unseren Chatbot gerichtet werden, und für die Generierung der Antworten auf diese Anfragen.
 
-Der Inference Server übernimmt die Orchestrierung der HTTP/gRPC-Anfragen, die von den Benutzern eingehen. Die Server nehmen die Benutzer-Anfragen entgegen und stellen sie in die Warteschlange, bis sie sie an die Engine weiterleiten, die dann die Antwort generiert.
+Der Inference Server übernimmt die Orchestrierung der HTTP/gRPC-Anfragen, die von den Benutzern eingehen. Die Server nehmen die Benutzer-Anfragen entgegen und stellen sie in die Warteschlange, bis sie sie an die Inference Engine weiterleiten, die dann die Antwort generiert.
 
 ![image](inference.png)
 
@@ -29,9 +29,10 @@ Bei der Auswahl von Inference Server und Inference Engine sind folgende Eingensc
 
 Inference Engine:
 
-- Speicher-Management (KV-Cache): FIFO und Speicherreservierung 
+- Speicher-Management (KV-Cache): FIFO und Speicherreservierung
 - Stapelverarbeitung von Anfragen (Batching)
 - Modellspezifische Optimierung (Paged Attention)
+- Quantisierung: Fähigkeit quantisierte Modelle zu nutzen
 
 Inference Server:
 
@@ -52,7 +53,8 @@ Nicht jede Inference Engine kann jedes Modell Speicher-Format verwenden.
 
 ### Ollama
 
-[Ollama](https://ollama.com) ist ein in Go OpenAI kompatibler Server, der die Inference Engine [llama.cpp](https://github.com/ggerganov/llama.cpp) nutzt. llama.cpp ist eine in C/C++ geschriebene Inference Engine. llama.cpp kann Modelle ausführen, weclhe im [GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) Dateiformat vorliegen. GGUF ist ein binäres Dateifomat für Inference mit der Tensor-Bibliothek für maschinelles Lernen [GGML](https://github.com/ggml-org/ggml).
+[Ollama](https://ollama.com) ist ein in der Programmiersprache Go programmierter OpenAI kompatibler Server, der die Inference Engine [llama.cpp](https://github.com/ggerganov/llama.cpp) nutzt. llama.cpp ist eine in C/C++ geschriebene Inference Engine. llama.cpp kann Modelle ausführen, weclhe im [GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) Dateiformat vorliegen. GGUF ist ein binäres Dateifomat für Inference mit der Tensor-Bibliothek für maschinelles Lernen [GGML](https://github.com/ggml-org/ggml).
+
 
 ### llama-cpp-python
 
@@ -62,6 +64,19 @@ Die Python-Bindings [llama-cpp-python](https://llama-cpp-python.readthedocs.io) 
 
 [vLLM](https://docs.vllm.ai/en/latest/)
 
-Literature:
+### OpenLLM
+
+[OpenLLM](https://github.com/bentoml/OpenLLM) ist ein Inference Server welcher entweder Pytorch als Backend or vLLM als Inference Engine verwendet. Ist ein Modell nicht für vLLM verfügbar, dann wird es mit dem Pytorch Backend geladen.
+
+### Weitere Inference Server
+
+- Text Generation Inteface (TGI) von Hugging Face
+- TorchServe
+- Ray
+- Nvidia TensorRT-LLM
+
+## Literature
 
 - [Which serving technology to choose for LLMs](https://pages.run.ai/hubfs/PDFs/Serving-Large-Language-Models-Run-ai-Benchmarking-Study.pdf)
+- [Ollama in Production](https://dev.to/darnahsan/deploy-ollama-with-s6-overlay-to-serve-and-pull-in-one-shot-31cm)
+-[OpenLLM](https://dev.to/ajeetraina/what-is-openllm-and-what-problem-does-it-solve-5aml)
