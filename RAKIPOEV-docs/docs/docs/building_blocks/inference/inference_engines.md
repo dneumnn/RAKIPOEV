@@ -73,10 +73,17 @@ Die Python-Bindings [llama-cpp-python](https://llama-cpp-python.readthedocs.io) 
 - Text Generation Inteface (TGI) von Hugging Face
 - TorchServe
 - Ray
-- Nvidia TensorRT-LLM
+- Nvidia TensorRT-LLM (TRTLMM)
+
+### Neue Entwicklungen
+
+Hugging Face arbeitet an einem neuen TGI Multi-Backend, das unter der Haube alle wesentlichen Inference Engines kapseln soll.
+
+![image](tgi_multi_backend.png)
 
 ## Literature
 
 - [Which serving technology to choose for LLMs](https://pages.run.ai/hubfs/PDFs/Serving-Large-Language-Models-Run-ai-Benchmarking-Study.pdf)
 - [Ollama in Production](https://dev.to/darnahsan/deploy-ollama-with-s6-overlay-to-serve-and-pull-in-one-shot-31cm)
--[OpenLLM](https://dev.to/ajeetraina/what-is-openllm-and-what-problem-does-it-solve-5aml)
+- [OpenLLM](https://dev.to/ajeetraina/what-is-openllm-and-what-problem-does-it-solve-5aml)
+- [TGI Multi-Backend](https://huggingface.co/blog/tgi-multi-backend)

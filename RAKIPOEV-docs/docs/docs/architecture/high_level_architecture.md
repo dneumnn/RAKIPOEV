@@ -4,7 +4,18 @@ Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten (La
 
 ![High-Level-Architecture](high_level_architecture.drawio)
 
+## Offene Standards
+
 Die (Referenz-)implementierung sollte so gestaltet werden, dass alle Komponenten cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.
+
+Die vier wichtigsten offenen Standrads, sind OpenAI API, Model Context Protocol, OpenID Connect und OpenTelemetry:
+
+- OpenAI API kapselt das Inference Backend und die Modelle
+- Model Context Protocol abstrahiert den Tool- und Datenzugriff über MCP Server.
+- OpenID Connect sorgt für Authentifizierung und liefert beispielsweise über einen Keycloak User und Rolle
+- OpenTelemetry ist ein offener Standard für Observability: Logging, Tracing und Metriken. 
+
+![Offene Standards](open_standards.png)
 
 Komponenten der Referenzarchitektur lassen sich in drei Layer einteilen. Eine besondere Herausforderung bei der Implemetierung der verschiedenen Komponenten (Building Blocks) innerhalb der Layers liegt in der föderierten Benutzer- und Modell-Verwaltung. Diese wird im Kapitel [Datenmanagement](data_management.md) beschrieben.
 
