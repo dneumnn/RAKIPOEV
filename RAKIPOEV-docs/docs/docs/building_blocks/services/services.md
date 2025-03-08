@@ -18,11 +18,20 @@ Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Te
 
 ## Tool
 
-Ein Tool ist ein Service mit dem das System mit seinem Aussenwelt (seinem Environment) interagieren kann. Im Gegensatz zu Tasks haben Tools keinen Zugriff auf Modell, dafür aber auf das Environment des Systems. 
+Ein Tool ist ein Service mit dem das System mit seiner Aussenwelt (seinem Environment) interagieren kann. Im Gegensatz zu Tasks haben Tools keinen Zugriff auf ein Modell, dafür aber auf das Environment des Systems.
 
 Typische Environments sind das Internet, Fachverfahren, aber auch eine Sandbox, in der Code ausgeführt werden kann.
 
 ![image](tool.png)
+
+### MCP Server
+
+### 
+
+### Sandbox
+
+Die sichere Ausführung von durch ein LLM erzeugten Code sollte entweder auf einer isolierten virtuellen Maschine oder über ein externes API (z.B. [E2B](https://e2b.dev)) erfolgen.
+
 
 ## Retrieval-Augmented-Generation
 
