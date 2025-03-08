@@ -8,6 +8,7 @@ nav:
       - Allgemeine Anforderungen: allgemeine_anforderungen.md
       - KI-Prinzipien: ki_prinzipien.md
       - Funktionale Anforderungen: funktionale_anforderungen.md
+      - Sicherheits-Anforderungen: security.md
     - Referenzarchitektur: 
       - High-Level-Architektur: docs/architecture/high_level_architecture.md
       - Datenmanagement: docs/architecture/data_management.md

@@ -1,10 +1,10 @@
 # Allgemeine Anforderungen
 
-Ziel der KI-Plattform ist es die Entwicjklung, die Integarion und den Betrieb von horizontalen und vertikalen (Gen)AI Uses Cases für die öffentliche Verwaltung zu ermöglichen. 
+Ziel der KI-Plattform ist es die Entwicklung, die Integarion und den Betrieb von horizontalen und vertikalen (Gen)AI Uses Cases für die öffentliche Verwaltung zu ermöglichen.
 
-Die Plattform für generative KI muss zentrale Anforderungen wie geringe Inferenzzeiten, hohe Skalierbarkeit, Flexibilität und die Entkopplung einzelner Komponenten erfüllen. 
+Die Plattform für generative KI muss zentrale Anforderungen wie geringe Inferenzzeiten, hohe Skalierbarkeit, Flexibilität und die Entkopplung einzelner Komponenten erfüllen.
 
-Die  Architektur muss erlauben, jede Komponente unabhängig voneinander zu betreiben, was zukünftige technologische Entwicklungen und den Austausch von Modulen durch leistungsfähigere Lösungen erleichtert. 
+Die  Architektur muss erlauben, jede Komponente unabhängig voneinander zu betreiben, was zukünftige technologische Entwicklungen und den Austausch von Modulen durch leistungsfähigere Lösungen erleichtert.
 
 Im Sinne der digitalen Souveränität liegt ein weiterer Fokus auf der Nutzung von Open-Source-Technologien.
 
