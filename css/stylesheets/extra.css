@@ -1,0 +1,38 @@
+/* Design https://design.landbw.de */
+
+/*
+[data-md-color-scheme="bw"] {
+    --md-primary-fg-color:        #000000;
+    --md-primary-fg-color--light: rgb(255, 225, 0);
+    --md-primary-fg-color--dark:  #000000;
+  }
+*/
+
+/* Override Default Light mode */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: rgb(42, 38, 35);  /* #2A2623 */
+  --md-default-bg-color: rgb(255, 255, 255); /* #FFFC00 */
+}
+
+/* Override Slate Dark mode */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: rgb(42, 38, 35);  /* #2A2623 */
+  --md-default-bg-color: rgb(42, 38, 35);  /* #2A2623 */
+}
+
+.custom-header {
+  background-color: rgb(255, 252, 0); /* #FFFC00 */
+  color: rgb(42, 38, 35);             /* #2A2623 */
+  padding: 20px;
+  text-align: center;
+}
+
+.custom-header .logo {
+  max-height: 50px;
+}
+
+.textlink {
+  text-decoration: underline; 
+  font-weight: bold;
+  color: blue
+}
