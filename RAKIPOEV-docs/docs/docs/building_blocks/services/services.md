@@ -24,22 +24,28 @@ Typische Environments sind das Internet, Fachverfahren, aber auch eine Sandbox, 
 
 ![image](tool.png)
 
-### MCP Server
-
-### 
-
 ### Sandbox
 
 Die sichere Ausführung von durch ein LLM erzeugten Code sollte entweder auf einer isolierten virtuellen Maschine oder über ein externes API (z.B. [E2B](https://e2b.dev)) erfolgen.
 
+### MCP Server
+
+Die Anbindung von Tools kann über das Model Context Protokoll (MCP) standardisiert werden.
 
 ## Retrieval-Augmented-Generation
 
-Retrieval-Augmented-Generation (kurz RAG ist ein komplexer Service, bei dem zu einem Prompt (Anfrage des Benutzers) Wissen aus vorhandenen Datenquellen selektiert, von dem man ausgeht, dass es als Faktenwissen in einem LLM nicht vorhanden ist. Der Prompt wird um das selektierte Wissen erweitert. Sowohl für das Retrieval, als auch für das Augmentation gibt es zahl reiche Umsetzungs-Muster, die innerhaklb eines RAG angewandt werden können, um das gewünschte Ergebnis zu erzeugen.
+Retrieval-Augmented-Generation (kurz RAG ist ein komplexer Service, bei dem zu einem Prompt (Anfrage des Benutzers) Wissen aus vorhandenen Datenquellen selektiert, von dem man ausgeht, dass es als Faktenwissen in einem LLM nicht vorhanden ist. Der Prompt wird um das selektierte Wissen erweitert. Sowohl für das Retrieval, als auch für das Augmentation gibt es zahl reiche Umsetzungs-Muster, die innerhalb eines RAG angewandt werden können, um das gewünschte Ergebnis zu erzeugen.
 
 Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-Datenbanken und Indexe (BM25) eingesetzt. Der Einsatz eines RAG bedingt einer vorgelagert Data-Pipeline, mithile derer man das Wissen geeignet aufbereitet in die ausgewählte Datenquelle überführt.
 
 ![image](rag.png)
+
+RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf Vector-Similarity (semantische Ähnlichkeit zwischen Text-Chunks) hin zu komplexeren graphen-basierten Verfahren weiterentwickelt.
+
+|RAG|Idee|Vor- und Nachteile|
+|---|----|------------------|
+|[GraphRAG](https://microsoft.github.io/graphrag/)|--|--|
+|[LiteRAG](https://github.com/HKUDS/LightRAG)|--|--|
 
 ## Agent
 

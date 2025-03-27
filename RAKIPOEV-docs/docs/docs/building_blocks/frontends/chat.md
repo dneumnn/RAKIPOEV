@@ -49,3 +49,4 @@ Weitere erwähnenswerte open source Frontends sind:
 
 - Der Chat Client von [RagFlow](https://ragflow.io) sowie
 - das [LibreChat](https://www.librechat.ai).
+- [AnythingLLM](https://docs.anythingllm.com/)
