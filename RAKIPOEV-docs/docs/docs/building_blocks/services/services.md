@@ -47,6 +47,41 @@ RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf 
 |[GraphRAG](https://microsoft.github.io/graphrag/)|--|--|
 |[LiteRAG](https://github.com/HKUDS/LightRAG)|--|--|
 
+## Kandidaten für die Implementierung
+
+**[Haystack (deepset-ai)](https://github.com/deepset-ai/haystack)**
+
+|Kriterium  |Bewertung|
+|-----------|------------------|
+|Lizenz     |Apache License 2.0|
+|Einsatzzweck|Produktion|
+|Skalierbarkeit|Ausgelegt für die Bearbeitung großer Dokumentenbestände|
+
+**[RAGFlow (infiniflow)](https://github.com/infiniflow/ragflow)**
+
+|Kriterium  |Bewertung|
+|-----------|------------------|
+|Lizenz     |Apache License 2.0|
+|Einsatzzweck|Prototyping?|
+|Skalierbarkeit|?|
+
+**[txtai (neuml)](https://github.com/neuml/txtai)**
+
+|Kriterium  |Bewertung|
+|-----------|------------------|
+|Lizenz     |Apache License 2.0|
+|Einsatzzweck|Produktion|
+|Skalierbarkeit|?|
+
+**[STORM (stanford-oval)](https://github.com/stanford-oval/storm)**
+
+|Kriterium  |Bewertung|
+|-----------|------------------|
+|Lizenz     |MIT Licence       |
+|Einsatzzweck|Forschung (cutting edge technologies)|
+|Skalierbarkeit||
+
+
 ## Agent
 
 Ein Agent ist ein Service, der autonom oder semi-autonom eine Aufgabe erfüllt. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen. 
