@@ -22,11 +22,11 @@ Conversational AI bezieht sich somit auf Technologien, die es Maschinen ermögli
 
 - Lernfähigkeit: Viele Conversational-AI-Systeme nutzen maschinelles Lernen, um aus Interaktionen zu lernen und ihre Antworten im Laufe der Zeit zu verbessern.
 
-Conversational AI Use Cases sind oft horizontale Use Cases, die auf eine breite Benutergruppe zugeschnitten sind. Das Dialogmanagement (Chat Frontend) ist von zentraler Bedeutung. Es wird of mit einem starlen LLM und einem RAG kombiniert, um intelligente Auskunftssysteme zu erstellen. 
+Conversational AI Use Cases sind oft horizontale Use Cases, die auf eine breite Benutergruppe zugeschnitten sind. Das Dialogmanagement (Chat Frontend) ist von zentraler Bedeutung. Es wird häufig mit einem starken LLM und einem RAG kombiniert, um intelligente Auskunftssysteme zu erstellen. 
 
 ## Copilot
 
-Ein Copilot unterstützt den Mnschen in seinen Aufgaben. Ein Copilot integriert sich in den Arbeitsablauf und benötigt dazu Wissen über den Kontext des Benutzers bei seiner Aufgabe.
+Ein Copilot unterstützt den Menschen in seinen Aufgaben. Ein Copilot integriert sich in den Arbeitsablauf und benötigt dazu Wissen über den Kontext des Benutzers bei seiner Aufgabe.
 
 Er muss folgende Fähigkeiten besitzen:
 
@@ -52,7 +52,7 @@ Systeme zur Lösung von Problemen, bei denen mehrere autonome Agenten interagier
 
 - Planung: In der Regeln ist ein Agent für die Planung zur Lösungsfindung verantwortlich. Er muss den Problem-Kontext verstehen und eine Lösungsstrategie entwickeln, um dann andere spezialisierte Agenten mit Aufgaben zu versehen.
 
-- Kollaboration: Um komplexe Problemw zu lösen, die ein einzelner Agent nicht selbstständig lösen kann, müssen Agebnten zusammenarbeiten, Informationen austauschen und ihre Aktionen koordinieren.
+- Kollaboration: Um komplexe Probleme zu lösen, die ein einzelner Agent nicht selbstständig lösen kann, müssen Agenten zusammenarbeiten, Informationen austauschen und ihre Aktionen koordinieren.
 
 - Kommunikation: Effektive Kommunikationsprotokolle sind entscheidend für Agenten, um Informationen auszutauschen, zu verhandeln und gemeinsame Entscheidungen zu treffen.
 

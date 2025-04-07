@@ -30,7 +30,7 @@ Die sichere Ausführung von durch ein LLM erzeugten Code sollte entweder auf ein
 
 ### MCP Server
 
-Die Anbindung von Tools kann über das Model Context Protokoll (MCP) standardisiert werden.
+Mithilfe des Model Context Protokolls (MCP) lassen sich verschiedene Datenquellen (Ressourcen, Tools, Templates) standardisiert an KI-Anwendungen anbinden. Die Komminkation erfolgt dabei bidrektional, so dass Datenquellen von einer KI-Anwendung gezielt angesprochen werden können, um bestimmte Informationen bereitzustellen. Diesen Zweck erfüllen MCP-Server, welche die Implemeniertung der Datenbereitstellung beinhalten. Die Anbindung von Tools kann somit über das Model Context Protokoll (MCP) standardisiert werden.
 
 ## Retrieval-Augmented-Generation
 
@@ -47,7 +47,7 @@ RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf 
 |[GraphRAG](https://microsoft.github.io/graphrag/)|--|--|
 |[LiteRAG](https://github.com/HKUDS/LightRAG)|--|--|
 
-## Kandidaten für die Implementierung
+### Kandidaten für die Implementierung
 
 **[Haystack (deepset-ai)](https://github.com/deepset-ai/haystack)**
 
