@@ -12,7 +12,7 @@ Ein Task ist ein Model-Task-driven Service. Hierbei wird eine spezifische Aufgab
 
 Ein Vielzahl von Model-Tasks und geeignete Modell finden sich auf [Hugging Face](https://huggingface.co/tasks).
 
-Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Text Manipiulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.
+Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Text Manipulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.
 
 ![image](task.png)
 
@@ -30,7 +30,7 @@ Die sichere Ausführung von durch ein LLM erzeugten Code sollte entweder auf ein
 
 ### MCP Server
 
-Mithilfe des Model Context Protokolls (MCP) lassen sich verschiedene Datenquellen (Ressourcen, Tools, Templates) standardisiert an KI-Anwendungen anbinden. Die Komminkation erfolgt dabei bidrektional, so dass Datenquellen von einer KI-Anwendung gezielt angesprochen werden können, um bestimmte Informationen bereitzustellen. Diesen Zweck erfüllen MCP-Server, welche die Implemeniertung der Datenbereitstellung beinhalten. Die Anbindung von Tools kann somit über das Model Context Protokoll (MCP) standardisiert werden.
+Mithilfe des Model Context Protokolls (MCP) lassen sich verschiedene Datenquellen (Ressourcen, Tools, Templates) standardisiert an KI-Anwendungen anbinden. Die Kommunikation erfolgt dabei bidrektional, so dass Datenquellen von einer KI-Anwendung gezielt angesprochen werden können, um bestimmte Informationen bereitzustellen. Diesen Zweck erfüllen MCP-Server, welche die Implemeniertung der Datenbereitstellung beinhalten. Die Anbindung von Tools kann somit über das Model Context Protokoll (MCP) standardisiert werden.
 
 ## Retrieval-Augmented-Generation
 

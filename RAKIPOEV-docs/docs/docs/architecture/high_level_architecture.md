@@ -38,11 +38,13 @@ Der Services-Layer beinheltet zustandslose funktionale Bausteine die sich zu Use
 
 Folgende erste Servicearten sind identifziert:
 
-- **RAG**: Über [RAGs](../glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
+- **RAG:** Über [RAGs](../glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
 
-- **Tools:** sind verschiedene Werkzeuge, die keinen Zugriff auf [Large Language Models](../glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
+- **MCP-Server** bieten einen standardisierten Zugang zu verschiedenen Datenquellen, Prompt-Templates sowie nachfolgend beschriebenen Tools.
 
-- **Task based Services:** stellen auf Basis von LLMs Funktionen zur Verfügung. *Beispiele: Summarization, Planning und Reasoning"*.
+- **Tools** sind verschiedene Werkzeuge, die keinen Zugriff auf [Large Language Models](../glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
+
+- **Task based Services** stellen auf Basis von LLMs Funktionen zur Verfügung. Beispiele: *Summarization, Planning und Reasoning*.
 
 - **Agents**  sind Services, die autonom oder semi-autonom eine Aufgabe erfüllen. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen.
 
