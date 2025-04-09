@@ -25,26 +25,30 @@ Die KI-gestützte Terminplanung basiert auf der Analyse historischer Daten in Be
 
 	Technologien: Machine Learning (ML) und Predictive Analytics
 
-## Textanalyse und Dokumentenmanagement
+## Informations- und Wissensmanagement 
 
-* Intelligente Texterkennung und -analyse:
-KI-basierte Klassifikation und Inhaltsanalyse umfangreicher Dokumentensammlungen, um relevante Informationen schneller zu extrahieren.
+* **Intelligente Texterkennung und -analyse:**
+Die KI-basierte Klassifikation und Inhaltsanalyse umfangreicher Dokumentensammlungen erfolgt auf Basis definierter Dokumentenbeständen und Wissensbasen, um relevante Informationen zusammenzusafassen und für die weitere Verarbeitung zu extrahieren.
 
-* Automatische Erstellung und Vorklassifizierung:
-Unterstützung bei der Erstellung und Archivierung von Schriftstücken, Protokollen oder Bescheiden durch KI.
+	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), ML-basierte Textklassifizierung
+
+* **Wissensmanagementsysteme mit semantischer Suche:**
+Die KI-basierte Suchmaschinen erschließen Inhalte und Verwaltungswissen effizient, sodass diese Inahlte gezielt für weitere Aufgaben verwendet werden oder der Entscheidungsuntertützung dienen.
+
+	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), Machine Learning (ML)
 
 ## Prädiktive Planung und Analysen
 
-* Vorhersagen des Personal- und Ressourcenbedarfs:
-KI-basierte Vorhersage und Optimierung von Personaleinsatz, insbesondere bei saisonalen Spitzen wie Wahlen, Steuerstichtagen oder Ferienzeiten.
+* **Vorhersagen des Personal- und Ressourcenbedarfs:**
+Die KI-basierte Vorhersage und Optimierung von Personaleinsatz basiert auf Daten, die Aussagen über Anwesenheit-/ Urluabs- und bereits gebuchte Auslatungszeiten ermöglichen. Eine Vorhersage und Optimierung des Ressourceneinsatzes zeiht insbesondere Informationen zu saisonalen Spitzen wie Wahlen, Steuerstichtagen oder Ferienzeiten hinzu.
 
-* Risikoeinschätzung und Betrugserkennung:
-KI-basierte Systeme zur frühzeitigen Erkennung von Auffälligkeiten, Risiken oder Manipulationen, etwa bei Steuererklärungen, Förderanträgen oder Sozialleistungen.
+	Technologien: Machine Leaning (ML), Predictive Analytics 
 
-## Informationsmanagement und Wissensassistenz
+* **Risikoeinschätzung und Betrugserkennung:**
+Die KI-basierte Systeme dienen der frühzeitigen Erkennung von Ausreissern in der Datenbasis (Auffälligkeiten), Risiken oder Manipulationen, etwa bei Steuererklärungen, Förderanträgen oder Sozialleistungen.
 
-* Wissensmanagementsysteme mit semantischer Suche:
-KI-basierte Suchmaschinen, die Inhalte und Verwaltungswissen besser erschließen,
+	Technologien: Data- und Predicitve Analytics, Machine Learning (ML), Regelbasierte Systeme
+
 
 
 
