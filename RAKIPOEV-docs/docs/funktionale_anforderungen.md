@@ -3,19 +3,27 @@
 
 ## Automatisierung und Prozessoptimierung
 
-* Intelligente Verwaltungs- und Sachbearbeitung:
-KI-gestützte Bearbeitung von standardisierten und wiederkehrenden Vorgängen (beispielsweise Antragsverfahren, Genehmigungen, Bescheide).
+* **Intelligente Verwaltungs- und Sachbearbeitung:**
+Bei der KI-gestützten Bearbeitung von standardisierten und wiederkehrenden Vorgängen wie beispielsweise Antragsverfahren, Genehmigungen und Bescheiden werden automatisch relevante Daten aus eingehenden Formularen und Dokumenten extrahiert und auf Vollständigkeit, Richtigkeit und Konsistenz geprüft.
 
-* Automatisierte Formularverarbeitung:
-KI-basierte Systeme können eingehende Formulare, Anträge oder Nachweise automatisch klassifizieren, validieren und weiterleiten.
+	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), Machine Learning (ML)
+
+* **Automatisierte Formularverarbeitung:**
+Es erfolgt eine KI-basierte Klassifizierung der eingehenden Formlare und Anträge (z. B. Baugenehmigung, Wohngeldantrag) sowie ein automatisiertes Routing an die zu bearbeitendene Stelle bzw. Person.
+
+	Technologien: Modelle für Named Entity Recognition (NER), ML-basierte Textklassifizierung, Regelbasierte Systeme (in Kombination mit KI)
 
 ## Bürgerservice und Gesprächsassistenten
 
-* Virtuelle Assistenten (Chatbots):
-KI-basierte Chatbots unterstützen Bürger rund um die Uhr und beantworten einfache und komplexere Anfragen, beispielsweise zu Öffnungszeiten, Anträgen oder notwendigen Dokumenten.
+* **Virtuelle Assistenten (Chatbots):**
+Eingehende Fragen von Bürgern in natürlicher Sprache, beispielsweise zu Öffnungszeiten, Anträgen oder notwendigen Dokumenten, werden interpretiert, um darauf passende Antworten aus vorhandenen Wissensdatenbanken zu liefern. Durch den Einsatz von KI werden einfache bzw. repititive Anfragen identifiziert und gefiltert, so dass vorrangig komplexere Fälle der Sachbearbeitung zugewiesen werden.
 
-* Intelligente Terminplanung:
-KI-gestützte Terminplanung zur besseren Auslastung von Bürgerbüro-Terminen und zur Vermeidung von Wartezeiten.
+	Technologien: Natural Language Understanding (NLU)
+
+* **Intelligente Terminplanung:**
+Die KI-gestützte Terminplanung basiert auf der Analyse historischer Daten in Bezug auf Terminarten, Tasgeszeiten, Wochentage, saisonale Schwankunugen, Vorlaufzeiten) mit dem Ziel, den zukünftigen Bedarf an Terminen für verschiedene Dienstleistungen vorherzusagen und somit eine bessere Auslastung von Bürgerbüro-Terminen und eine Vermeidung von Wartezeiten zu erreichen.
+
+	Technologien: Machine Learning (ML) und Predictive Analytics
 
 ## Textanalyse und Dokumentenmanagement
 
