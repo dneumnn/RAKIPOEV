@@ -6,16 +6,16 @@ RAKIPOEV ist der Arbeitsname für das Exposee.
 
 Im Anschluss an das Exposee soll eine Referenzimplementierung erstellt werden.
 
-Oberstes Ziel für die Referenzimplementierung ist eine den Anforderungen genügende Implementierunmg unter Verwendung von Open-Source Komponenten.
+Oberstes Ziel für die Referenzimplementierung ist eine den Anforderungen der öffentlichen Verwaltung genügende Implementierung unter Verwendung von Open-Source Komponenten.
 
-Die Dokumentation wir mittels MkDocs erstellt. [MkDocs](https://www.mkdocs.org) generiert auf Basis von Markup Dateien eine Dekomentation als Web-Anwendung. Diese kann dann als GitHub oder GitLab Pages deployed werden.
+Die Dokumentation wird mittels MkDocs erstellt. [MkDocs](https://www.mkdocs.org) generiert auf Basis von Markup Dateien eine Dokumentation als Web-Anwendung. Diese kann dann als GitHub oder GitLab Pages deployed werden.
 
 ## Dokumentation mit MkDocs
 
-Die Dokumentation erfolgt im Verzeichnis RAKIPOEV-docs. RAKIPOEV-docs ist dass root-Verzeichnis der Dokuemntaion.
+Die Dokumentation erfolgt im Verzeichnis RAKIPOEV-docs. RAKIPOEV-docs ist das root-Verzeichnis der Dokumentation.
 
 - [MkDocs](https://www.mkdocs.org) 
-- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) documentation framework on top of MkDocs
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) documentation framework auf Basis von MkDocs
 
 ### Installation MkDocs
 
@@ -30,7 +30,7 @@ pip install mkdocs-mermaid2-plugin
 Für das draw.io-PlugIn müssen die Microsoft Build Tools für C++ installiert sein.
 (https://visualstudio.microsoft.com/de/visual-cpp-build-tools/)
 
-Erstelle einen neue leere Dokumentation. Nicht notwendig, da im Repo bereits vorhanden.
+Erstelle einen neue leere Dokumentation. Nicht notwendig, da im Repository bereits vorhanden.
 
 ```bash
 cd RAKIPOEV-docs
@@ -46,7 +46,7 @@ cd RAKIPOEV-docs
 mkdocs serve
 ```
 
-For full documentation visit [mkdocs](https://www.mkdocs.org) and [mkdocs-material](https://squidfunk.github.io/mkdocs-material/).
+Eine vollständige Dokumentation findet sich unter [mkdocs](https://www.mkdocs.org) und [mkdocs-material](https://squidfunk.github.io/mkdocs-material/).
 
 Commands
 
