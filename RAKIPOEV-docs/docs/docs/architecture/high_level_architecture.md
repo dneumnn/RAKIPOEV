@@ -8,11 +8,11 @@ Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten (La
 
 Die (Referenz-)implementierung sollte so gestaltet werden, dass alle Komponenten cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.
 
-Die vier wichtigsten offenen Standrads, sind OpenAI API, Model Context Protocol, OpenID Connect und OpenTelemetry:
+Die vier wichtigsten offenen Standards, sind OpenAI API, Model Context Protocol, OpenID Connect und OpenTelemetry:
 
-- OpenAI API kapselt das Inference Backend und die Modelle
-- Model Context Protocol abstrahiert den Tool- und Datenzugriff über MCP Server.
-- OpenID Connect sorgt für Authentifizierung und liefert beispielsweise über einen Keycloak User und Rolle
+- OpenAI API kapselt das Inference Backend und die Modelle,
+- Model Context Protocol abstrahiert den Tool- und Datenzugriff über MCP Server,
+- OpenID Connect sorgt für Authentifizierung und liefert beispielsweise über einen Keycloak User und Rolle,
 - OpenTelemetry ist ein offener Standard für Observability: Logging, Tracing und Metriken. 
 
 ![Offene Standards](open_standards.png)
@@ -34,7 +34,7 @@ Alle Frontends können über das API-Gateway auf die verschiedenen Services zugr
 
 ## Services-Layer
 
-Der Services-Layer beinheltet zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.
+Der Services-Layer beinhaltet zustandslose funktionale Bausteine, die sich zu Use Cases kombinieren lassen. Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.
 
 Folgende erste Servicearten sind identifziert:
 
@@ -42,11 +42,11 @@ Folgende erste Servicearten sind identifziert:
 
 - **MCP-Server** bieten einen standardisierten Zugang zu verschiedenen Datenquellen, Prompt-Templates sowie nachfolgend beschriebenen Tools.
 
-- **Tools** sind verschiedene Werkzeuge, die keinen Zugriff auf [Large Language Models](../glossar.md#Large Language Model) benötigen. *Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter*.
+- **Tools** sind verschiedene Werkzeuge, die keinen Zugriff auf [Large Language Models](../glossar.md#Large Language Model) benötigen. Beispiele: *ein Taschenrechner, Websuche oder das aktuelle Wetter*.
 
 - **Task based Services** stellen auf Basis von LLMs Funktionen zur Verfügung. Beispiele: *Summarization, Planning und Reasoning*.
 
-- **Agents**  sind Services, die autonom oder semi-autonom eine Aufgabe erfüllen. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen.
+- **Agents**  sind Services, die autonom oder semi-autonom eine Aufgabe erfüllen. Die Aufgaben-Steuerung kann entweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen.
 
 ## Inference-Layer
 
