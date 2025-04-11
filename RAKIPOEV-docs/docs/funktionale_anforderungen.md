@@ -49,11 +49,15 @@ Die KI-basierte Systeme dienen der frühzeitigen Erkennung von Ausreißern in de
 
 	Technologien: Data- und Predicitve Analytics, Machine Learning (ML), Regelbasierte Systeme
 
+## Allgemeine Verwaltungsarbeiten
 
+* **Untersützung bei Verwaltungsaufgaben:**
+Die KI-Services dienen der Unterstützung bei allgemeinen alltäglichen Aufgaben von Verwaltungsmitarbeitenden. Darunter sind u. a. Formulierungshilfen, Zusammenfassungen, Übersetzungen, Texte in leichte Sprache übersetzen und Präsentationserstellungen zu subsummieren. Ein Zugang dieser KI-Services muss direkt über den Arbeitsplatz eröglicht werden. Das bedeutet ein Zugang über ein persönliches Web-Frontend sowie die Integration der KI-Services in bestehende Office-Anwendungen und E-Mailanwendungen via PlugIns muss gegeben sein.
 
+	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP)
 
-### Backup
-
+	
+## Weitere initiale Anwendungsfälle (nicht vollständig)
 
 
 |Kategorie|Use Case||
