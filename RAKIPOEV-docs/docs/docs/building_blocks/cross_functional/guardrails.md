@@ -7,7 +7,7 @@ Die Referenzarchitektur muss Leitplanken (Guardrails) implementieren. Es wird zw
 Input-Guardrails bieten Schutz vor folgenden Risiken:
 
 - unbeabsichtigter Veröffentlichung privater (zu schützender) Informationen (DSGVO), insbesondere an externe API
-- Model Jailbtreaking (Prompts die das System kompromiteiren können)
+- Model Jailbtreaking (Prompts die das System kompromittieren können)
 - Verhinderung von gefährlichen und nicht-ethischen Prompts
 
 ## Output-Guardrails

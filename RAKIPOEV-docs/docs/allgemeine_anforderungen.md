@@ -1,8 +1,8 @@
 # Allgemeine Anforderungen
 
-Ziel der KI-Plattform ist es die **Entwicklung, die Integarion und den Betrieb** von **horizontalen und vertikalen (Gen)AI Uses Cases** für die öffentliche Verwaltung zu ermöglichen.
+Ziel der KI-Plattform ist es die **Entwicklung, die Integration und den Betrieb** von **horizontalen und vertikalen (Gen)AI Uses Cases** für die öffentliche Verwaltung zu ermöglichen.
 
-**Horiziontale Use Cases** sind solche, die von der Mehrheit der Mitarbeitenden genutz werden (bspw. allgemeine Verwaltungsaufgaben, wie das Bearbeiten von Bürgeranfragen, oder das Erstellen von Vermerken). **Vertikale Use Cases** hingegen betreffen spezielle fachliche Bereiche, dessen Benutzerkreis eingeschränkt ist. 
+**Horiziontale Use Cases** sind solche, die von der Mehrheit der Mitarbeitenden genutzt werden (bspw. allgemeine Verwaltungsaufgaben, wie das Bearbeiten von Bürgeranfragen, oder das Erstellen von Vermerken). **Vertikale Use Cases** hingegen betreffen spezielle fachliche Bereiche, dessen Benutzerkreis eingeschränkt ist. 
 
 Die bereitgestellten KI-Services müssen für die Mitarbeitenden über ein **Web Frontend** aufrufbar sein, zusätzlich aber auch über **Plugins** in vorhandenen Office-Anwendungen, inklusive E-Mail-Anwendung. Ergänzend erfordern insbesondere vertikale Use Cases den Zugriff der erforderlichen KI-Services über das **Fachverfahren** selbst.
 

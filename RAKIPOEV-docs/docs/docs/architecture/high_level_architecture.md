@@ -17,7 +17,7 @@ Die vier wichtigsten offenen Standards, sind OpenAI API, Model Context Protocol,
 
 ![Offene Standards](open_standards.png)
 
-Komponenten der Referenzarchitektur lassen sich in drei Layer einteilen. Eine besondere Herausforderung bei der Implemetierung der verschiedenen Komponenten (Building Blocks) innerhalb der Layers liegt in der föderierten Benutzer- und Modell-Verwaltung. Diese wird im Kapitel [Datenmanagement](data_management.md) beschrieben.
+Komponenten der Referenzarchitektur lassen sich in drei Layer einteilen. Eine besondere Herausforderung bei der Implementierung der verschiedenen Komponenten (Building Blocks) innerhalb der Layers liegt in der föderierten Benutzer- und Modell-Verwaltung. Diese wird im Kapitel [Datenmanagement](data_management.md) beschrieben.
 
 ## Frontend-Layer
 
@@ -36,7 +36,7 @@ Alle Frontends können über das API-Gateway auf die verschiedenen Services zugr
 
 Der Services-Layer beinhaltet zustandslose funktionale Bausteine, die sich zu Use Cases kombinieren lassen. Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.
 
-Folgende erste Servicearten sind identifziert:
+Folgende erste Servicearten sind identifiziert:
 
 - **RAG:** Über [RAGs](../glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
 

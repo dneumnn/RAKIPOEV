@@ -9,7 +9,7 @@ Bei der KI-gestützten Bearbeitung von standardisierten und wiederkehrenden Vorg
 	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), Machine Learning (ML)
 
 * **Automatisierte Formularverarbeitung:**
-Es erfolgt eine KI-basierte Klassifizierung der eingehenden Formlare und Anträge (z. B. Baugenehmigung, Wohngeldantrag) sowie ein automatisiertes Routing an die zu bearbeitendene Stelle bzw. Person.
+Es erfolgt eine KI-basierte Klassifizierung der eingehenden Formulare und Anträge (z. B. Baugenehmigung, Wohngeldantrag) sowie ein automatisiertes Routing an die zu bearbeitende Stelle bzw. Person.
 
 	Technologien: Modelle für Named Entity Recognition (NER), ML-basierte Textklassifizierung, Regelbasierte Systeme (in Kombination mit KI)
 
@@ -21,31 +21,31 @@ Eingehende Fragen von Bürgern in natürlicher Sprache, beispielsweise zu Öffnu
 	Technologien: Natural Language Understanding (NLU)
 
 * **Intelligente Terminplanung:**
-Die KI-gestützte Terminplanung basiert auf der Analyse historischer Daten in Bezug auf Terminarten, Tasgeszeiten, Wochentage, saisonale Schwankunugen, Vorlaufzeiten) mit dem Ziel, den zukünftigen Bedarf an Terminen für verschiedene Dienstleistungen vorherzusagen und somit eine bessere Auslastung von Bürgerbüro-Terminen und eine Vermeidung von Wartezeiten zu erreichen.
+Die KI-gestützte Terminplanung basiert auf der Analyse historischer Daten in Bezug auf Terminarten, Tageszeiten, Wochentage, saisonale Schwankungen, Vorlaufzeiten) mit dem Ziel, den zukünftigen Bedarf an Terminen für verschiedene Dienstleistungen vorherzusagen und somit eine bessere Auslastung von Bürgerbüro-Terminen und eine Vermeidung von Wartezeiten zu erreichen.
 
 	Technologien: Machine Learning (ML) und Predictive Analytics
 
 ## Informations- und Wissensmanagement 
 
 * **Intelligente Texterkennung und -analyse:**
-Die KI-basierte Klassifikation und Inhaltsanalyse umfangreicher Dokumentensammlungen erfolgt auf Basis definierter Dokumentenbeständen und Wissensbasen, um relevante Informationen zusammenzusafassen und für die weitere Verarbeitung zu extrahieren.
+Die KI-basierte Klassifikation und Inhaltsanalyse umfangreicher Dokumentensammlungen erfolgt auf Basis definierter Dokumentenbeständen und Wissensbasen, um relevante Informationen zusammenzufassen und für die weitere Verarbeitung zu extrahieren.
 
 	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), ML-basierte Textklassifizierung
 
 * **Wissensmanagementsysteme mit semantischer Suche:**
-Die KI-basierte Suchmaschinen erschließen Inhalte und Verwaltungswissen effizient, sodass diese Inahlte gezielt für weitere Aufgaben verwendet werden oder der Entscheidungsuntertützung dienen.
+Die KI-basierte Suchmaschinen erschließen Inhalte und Verwaltungswissen effizient, sodass diese Inhalte gezielt für weitere Aufgaben verwendet werden oder der Entscheidungsunterstützung dienen.
 
 	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP), Machine Learning (ML)
 
 ## Prädiktive Planung und Analysen
 
 * **Vorhersagen des Personal- und Ressourcenbedarfs:**
-Die KI-basierte Vorhersage und Optimierung von Personaleinsatz basiert auf Daten, die Aussagen über Anwesenheit-/ Urluabs- und bereits gebuchte Auslatungszeiten ermöglichen. Eine Vorhersage und Optimierung des Ressourceneinsatzes zeiht insbesondere Informationen zu saisonalen Spitzen wie Wahlen, Steuerstichtagen oder Ferienzeiten hinzu.
+Die KI-basierte Vorhersage und Optimierung von Personaleinsatz basiert auf Daten, die Aussagen über Anwesenheit-/ Urlaubs- und bereits gebuchte Auslastungszeiten ermöglichen. Eine Vorhersage und Optimierung des Ressourceneinsatzes zieht insbesondere Informationen zu saisonalen Spitzen wie Wahlen, Steuerstichtagen oder Ferienzeiten hinzu.
 
 	Technologien: Machine Leaning (ML), Predictive Analytics 
 
 * **Risikoeinschätzung und Betrugserkennung:**
-Die KI-basierte Systeme dienen der frühzeitigen Erkennung von Ausreissern in der Datenbasis (Auffälligkeiten), Risiken oder Manipulationen, etwa bei Steuererklärungen, Förderanträgen oder Sozialleistungen.
+Die KI-basierte Systeme dienen der frühzeitigen Erkennung von Ausreißern in der Datenbasis (Auffälligkeiten), Risiken oder Manipulationen, etwa bei Steuererklärungen, Förderanträgen oder Sozialleistungen.
 
 	Technologien: Data- und Predicitve Analytics, Machine Learning (ML), Regelbasierte Systeme
 
@@ -83,7 +83,7 @@ Die KI-basierte Systeme dienen der frühzeitigen Erkennung von Ausreissern in de
 |Spracherkennung|Sprache erkennen|Audio oder Texteingabe wird erkannt 
 ||Sprache als Text |Spracheingabe (in Audio) kann als Text wiedergegeben werden
 |Spracherzeugung|Sprache als Audio|Spracheingabe (in Text) kann als Audio wiedergegeben werden
-||Sprache als Text|Spracheingabe (in Audio) kann als Textwiedergegeben werden
+||Sprache als Text|Spracheingabe (in Audio) kann als Text wiedergegeben werden
 |Videoerzeugung||Generierung von Videomaterial basierend auf Eingaben. 
 |Videoerkennung||Analyse und Interpretation von Videomaterial zur weiteren Verarbeitung oder Erkennung von Anomalien.
 |Fachspezifische Funktionen|Datenmuster erkennen|Identifizieren von Trends und Zusammenhängen in großen Datensätzen zur Unterstützung fundierter Entscheidungen und Vorhersagen.

@@ -8,7 +8,7 @@ Dabei werden folgende Anforderungen an die Benutzerschnittstelle gestellt:
 
 - SSL-Fähigkeit
 - Authentifizierung über einen Identity-Provider (z.B. [Keycloak](https://www.keycloak.org))
-- Die Anwendung sollte [The Twelve-Factor App](https://12factor.net/de/)-Prinzipien genügen. Insbesondere die Nebenläufigkeit und die Zustandslosigkeit sind für einen Beztrieb der Anwendung in einer cloud-nativen Umgebung essentiell.
+- Die Anwendung sollte [The Twelve-Factor App](https://12factor.net/de/)-Prinzipien genügen. Insbesondere die Nebenläufigkeit und die Zustandslosigkeit sind für einen Betrieb der Anwendung in einer cloud-nativen Umgebung essentiell.
 - Mandantenfähigkeit
 - Das Look&Feel sollte auf das Look&Feel einer Behörde angepasst werden können
 - Die Anwendung genügt den wesentlichen Anforderungen an [Barrierefreiheit](https://www.behindertenbeauftragter.de/DE/AS/schwerpunkte/barrierefreiheit/barrierefreiheit-node.html1) 
@@ -17,7 +17,7 @@ Dabei werden folgende Anforderungen an die Benutzerschnittstelle gestellt:
 
 ![image](chat_anwendung.png)
 
-- Die Anwendung ermöglicht über ein Plug-In Konzept das Einbinden einer Vielzahl spezifischer Frontends in Abhängigkeit der Benutzer-Präferenzen. Auf diese Weise kann der Nutzer mehrere spezifische (vertiklale) Chat-Bot-Lösungen aus einer Benutzeroberfläche ansteuern. Dazu müssen Erweiterungspunkte (extension points) definert sein und gleichzeitig die Erweiterungsmöglichkeit über Konfiguration (im weitesten Sinne siehe auch [Fowler](https://martinfowler.com/eaaCatalog/plugin.html))
+- Die Anwendung ermöglicht über ein Plug-In Konzept das Einbinden einer Vielzahl spezifischer Frontends in Abhängigkeit der Benutzer-Präferenzen. Auf diese Weise kann der Nutzer mehrere spezifische (vertikale) Chat-Bot-Lösungen aus einer Benutzeroberfläche ansteuern. Dazu müssen Erweiterungspunkte (extension points) definiert sein und gleichzeitig die Erweiterungsmöglichkeit über Konfiguration (im weitesten Sinne siehe auch [Fowler](https://martinfowler.com/eaaCatalog/plugin.html))
 
 ## Kandidaten für eine Implementierung
 

@@ -1,6 +1,6 @@
 # Sicherheits-Anforderungen
 
-Das [Open Worldwide Application Security Project (OWASP)](https://owasp.org/about/) beschreibt [10 Risiken beim Einsatz von LLMs und GenAI Anwendungen](https://genai.owasp.org/llm-top-10/) und gibt Anleitungen zr Mitigation dieser Risiken:
+Das [Open Worldwide Application Security Project (OWASP)](https://owasp.org/about/) beschreibt [10 Risiken beim Einsatz von LLMs und GenAI Anwendungen](https://genai.owasp.org/llm-top-10/) und gibt Anleitungen zur Mitigation dieser Risiken:
 
 1. Prompt Injection
 2. Sensitive Information Disclosure
@@ -17,9 +17,9 @@ Eine KI-Plattform für die öffentliche Verwaltung sollte geeignete Maßnahmen f
 
 ## Prompt Injection
 
-Direkte Prompt Injection tritt auf, wenn die Prompt-Eingabe des Benutzers das Verhalten der GenAI Anwendung  (oder des dahinterliegenden Modells) auf unbeabsichtgte oder unerwartete Weise direkt verändert. Dabei kann die Eingabe entweder beabsichtigt oder unbeabsichtugt erfolgt sein. Dem gegenüber steht die indirekte Prompt Injection. Diese tritt auf, wenn die Eingabe über externe Quellen (Services, Tools) beeinflusst werden.
+Direkte Prompt Injection tritt auf, wenn die Prompt-Eingabe des Benutzers das Verhalten der GenAI Anwendung  (oder des dahinterliegenden Modells) auf unbeabsichtigte oder unerwartete Weise direkt verändert. Dabei kann die Eingabe entweder beabsichtigt oder unbeabsichtigt erfolgt sein. Dem gegenüber steht die indirekte Prompt Injection. Diese tritt auf, wenn die Eingabe über externe Quellen (Services, Tools) beeinflusst werden.
 
-Die Nachfolgende Grafik zeigt Mitigationsstretegien auf, die im Wesentlichen durch den Einsatz eines LLM Gateway erreicht werden können:
+Die Nachfolgende Grafik zeigt Mitigationsstrategien auf, die im Wesentlichen durch den Einsatz eines LLM Gateway erreicht werden können:
 
 ![security](security_massnahmen.png)
 
@@ -31,10 +31,10 @@ Die Nachfolgende Grafik zeigt Mitigationsstretegien auf, die im Wesentlichen dur
 
 4. Implementiere Output Filter: mittels Guardrails
 
-5. Implement Role-Based Access Controll: Das Modell sollte immer mit der Rolle des jeweiligen Benutzers ausgeführt werden. Das gilt auch für RAG und Agenten.
+5. Implementiere Role-Based Access Control: Das Modell sollte immer mit der Rolle des jeweiligen Benutzers ausgeführt werden. Das gilt auch für RAG und Agenten.
 
 6. Implementiere Human-In-The-Loop Kontrollen: um Nicht-Autorisierte Aktionen zu verhindern.
 
 7. Implementiere Observability entlang der gesamten Ausführungsstrecke
 
-8. Führe regelmässig Angriffssimulationen durch: Das Modell wird dabei als immer als nicht-vertrauenswürdig eigestuft und seine Zuverlässigkeit überprüft.
+8. Führe regelmäßig Angriffssimulationen durch: Das Modell wird dabei als immer als nicht-vertrauenswürdig eingestuft und seine Zuverlässigkeit überprüft.

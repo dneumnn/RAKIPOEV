@@ -2,7 +2,7 @@
 
 ## Server und Engine
 
-Die Nutzung eines Modells (LLMs) zur Inference kann grundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmerts sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prediction, sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.
+Die Nutzung eines Modells (LLMs) zur Inference kann grundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmert sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prediction, sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.
 
 Die Inference Engine kann eine Vielzahl von Optimierungstechniken unterstützen. Im Kern handelt es sich um Python- oder C++-Bibliotheken. Sie sorgen für das Stapeln der Anfragen (Batching), die von den Benutzern an unseren Chatbot gerichtet werden, und für die Generierung der Antworten auf diese Anfragen.
 
@@ -25,7 +25,7 @@ Es gibt zwei wesentliche Metriken, die unser Verständnis von der Leistung des S
 
 ## Auf was solle man achten
 
-Bei der Auswahl von Inference Server und Inference Engine sind folgende Eingenschaften relevant, die sich auf Durchsatz und Latenz auswirken:
+Bei der Auswahl von Inference Server und Inference Engine sind folgende Eigenschaften relevant, die sich auf Durchsatz und Latenz auswirken:
 
 Inference Engine:
 
@@ -70,7 +70,7 @@ Die Python-Bindings [llama-cpp-python](https://llama-cpp-python.readthedocs.io) 
 
 ### Weitere Inference Server
 
-- Text Generation Inteface (TGI) von Hugging Face
+- Text Generation Interface (TGI) von Hugging Face
 - TorchServe
 - Ray
 - Nvidia TensorRT-LLM (TRTLMM)

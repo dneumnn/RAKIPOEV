@@ -1,14 +1,14 @@
 # Exposee
 
-Analog zur Architektur von Gebäuden stellen wir eine Bauprojektdarstellung einer KI-Plattform für die Öffentliche Verwaltung vor. Das Exposee beschreibt das Warum, das Was und das Wie in Form einer Referenzarchitektur sowie einer Referenzimplementierung.
+Analog zur Architektur von Gebäuden stellen wir eine Bauprojektdarstellung einer KI-Plattform für die Öffentliche Verwaltung vor. Das Exposee beschreibt das *Warum*, das *Was* und das *Wie* in Form einer Referenzarchitektur sowie einer Referenzimplementierung.
 
 ## Warum
 
 Horizontale und vertikale KI Anwendungsfälle bergen ein enormes Potenzial für die Effizienzsteigerung in der öffentlichen Verwaltung. Mit ihrer Hilfe lassen sich wirksame Entlastungen für knappes Fachpersonal bewerkstelligen.
 
-Wohingegen horizontale Anwendungsfälle eine breite Anwenderschaft bei ihrer Arbeit unterstützen, sind vertikale Anwendungsfälle in Fachverfahren integriert und versprechen die höcheten Effizienzgewinne.
+Wohingegen horizontale Anwendungsfälle eine breite Anwenderschaft bei ihrer Arbeit unterstützen, sind vertikale Anwendungsfälle in Fachverfahren integriert und versprechen die höchste Effizienzgewinne.
 
-Für eine zielgerichtete und kosteneffiziete Implementierung unter Wahrung der Souveränität ist eine Plattform notwendig, die
+Für eine zielgerichtete und kosteneffiziente Implementierung unter Wahrung der Souveränität ist eine Plattform notwendig, die
 
 1. flächendeckend eingesetzt,
 2. flexibel erweitert und
@@ -34,12 +34,12 @@ Wesentliche Bestandteile der KI-Plattform sind:
 2. Kapselung der Modell-Runtimes durch ein LLM-Gateway, welches einen standardisierten Zugriff (API), eine Authentifizierungs- und Authorisierungsschicht sowie ein Verbrauchs-Tracking und Logging bereitstellt.
 3. Agenten-Pool: Agenten können auf Basis eines App-Store-Konzeptes eingebracht und genutzt werden.
 4. Task-driven Services: Bereitstellung einer Vielzahl von einfachen oder komplexen Tasks (z. B. Zusammenfassung, Übersetzung, Transkription, .... ) über ein Service-Gateway. Diese Services können von Chatbots, Fachverfahren, Agenten oder anderen Komponenten der Plattform genutzt werden.
-5. Retrieval-Augmented-Generation: Anbindung eines oderer mehrerer RAG-Frameworks inklusive Mandanten-fähiger Speicherverwaltung und Dokumenten-zentriertem Berechtigungssystem.
+5. Retrieval-Augmented-Generation: Anbindung eines oder mehrerer RAG-Frameworks inklusive Mandanten-fähiger Speicherverwaltung und Dokumenten-zentriertem Berechtigungssystem.
 6. Verschiede Typen von Frontend-Technologien.
 7. Prompt-Store
 8. Model-Store
 
-Horienzontale und vertikale Anwendungsfälle entstehen durch geeignete Kombination der Bestandteile und können basierend auf der Referenzarchitektur beschrieben und implementiert werden. Blaupausen und Referenzimplementierungen werden in der Community geshared.
+Horizontale und vertikale Anwendungsfälle entstehen durch geeignete Kombination der Bestandteile und können basierend auf der Referenzarchitektur beschrieben und implementiert werden. Blaupausen und Referenzimplementierungen werden in der Community geshared.
 
 ## Wie
 
