@@ -57,8 +57,7 @@ Die KI-Services dienen der Unterstützung bei allgemeinen alltäglichen Aufgaben
 	Technologien: Optical Character Recognition (OCR), Natural Language Processing (NLP)
 
 	
-### Weitere initiale Anwendungsfälle (nicht vollständig)
-
+## Weitere initiale Anwendungsfälle (nicht vollständig)
 
 
 |Kategorie|Use Case||
