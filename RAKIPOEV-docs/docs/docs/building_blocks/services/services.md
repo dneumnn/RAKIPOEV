@@ -42,45 +42,19 @@ Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-
 
 RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf Vector-Similarity (semantische Ähnlichkeit zwischen Text-Chunks) hin zu komplexeren Grafen-basierten Verfahren weiterentwickelt.
 
-|RAG|Idee|Vor- und Nachteile|
-|---|----|------------------|
-|[GraphRAG](https://microsoft.github.io/graphrag/)|--|--|
-|[LiteRAG](https://github.com/HKUDS/LightRAG)|--|--|
-
 ### Kandidaten für die Implementierung
 
-**[Haystack (deepset-ai)](https://github.com/deepset-ai/haystack)**
-
-|Kriterium  |Bewertung|
-|-----------|------------------|
-|Lizenz     |Apache License 2.0|
-|Einsatzzweck|Produktion|
-|Skalierbarkeit|Ausgelegt für die Bearbeitung großer Dokumentenbestände|
-
-**[RAGFlow (infiniflow)](https://github.com/infiniflow/ragflow)**
-
-|Kriterium  |Bewertung|
-|-----------|------------------|
-|Lizenz     |Apache License 2.0|
-|Einsatzzweck|Prototyping?|
-|Skalierbarkeit|?|
-
-**[txtai (neuml)](https://github.com/neuml/txtai)**
-
-|Kriterium  |Bewertung|
-|-----------|------------------|
-|Lizenz     |Apache License 2.0|
-|Einsatzzweck|Produktion|
-|Skalierbarkeit|?|
-
-**[STORM (stanford-oval)](https://github.com/stanford-oval/storm)**
-
-|Kriterium  |Bewertung|
-|-----------|------------------|
-|Lizenz     |MIT Licence       |
-|Einsatzzweck|Forschung (cutting edge technologies)|
-|Skalierbarkeit||
-
+|RAG|Lizenz|Einsatzzweck|Skalierbarkeit|Idee|Vor- und Nachteile|
+|---|----|------------------|--|--|--|
+|[GraphRAG](https://microsoft.github.io/graphrag/)               |MIT Licence       |Produktion|--|--|--|
+|[LigthRAG](https://github.com/HKUDS/LightRAG)                   |MIT Licence       |--        |--|--|--|
+|[Haystack (deepset-ai)](https://github.com/deepset-ai/haystack) |Apache License 2.0|Produktion|Ausgelegt für die Bearbeitung großer Dokumentenbestände|--|--|
+|[RAGFlow (infiniflow)](https://github.com/infiniflow/ragflow)   |Apache License 2.0|--        |--|--|--|
+|[txtai (neuml)](https://github.com/neuml/txtai)                 |Apache License 2.0|Produktion|--|--|--|
+|[STORM (stanford-oval))](https://github.com/stanford-oval/storm)|MIT Licence       |Forschung |--|--|--|
+|[R2R](https://github.com/SciPhi-AI/R2R)                         |MIT Licence       |Produktion|--|--|--|
+|[LangChain](https://github.com/langchain-ai/langchain)          |MIT Licence       |Produktion|eingeschränkt|--|--|
+|[LlamaIndex](https://github.com/run-llama/llama_index)          |MIT Licence       |Produktion|--|--|--|
 
 ## Agent
 
