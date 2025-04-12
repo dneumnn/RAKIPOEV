@@ -10,8 +10,10 @@
       
       
       
-        <link rel="prev" href="../docs/glossar/">
+        <link rel="prev" href="../funktionale_anforderungen/">
       
+      
+        <link rel="next" href="../docs/architecture/high_level_architecture/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -19,7 +21,7 @@
     
     
       
-        <title>About - Exposee</title>
+        <title>Sicherheits-Anforderungen - Exposee</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about" class="md-skip">
+        <a href="#sicherheits-anforderungen" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              Sicherheits-Anforderungen
             
           </span>
         </div>
@@ -197,10 +199,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../allgemeine_anforderungen/" class="md-tabs__link">
           
   
@@ -303,11 +307,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
         
   
     
@@ -396,25 +398,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -425,7 +430,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Anforderungen
@@ -499,10 +504,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sicherheits-Anforderungen
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -511,6 +536,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Injection
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1044,19 +1098,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1065,7 +1110,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1088,8 +1132,51 @@
   
 
 
-<h1 id="about">About</h1>
-<p>Hier können wir die Inhaltsgeber beschreiben und aus der Titelzeile herausnehmen?</p>
+<h1 id="sicherheits-anforderungen">Sicherheits-Anforderungen</h1>
+<p>Das <a href="https://owasp.org/about/">Open Worldwide Application Security Project (OWASP)</a> beschreibt <a href="https://genai.owasp.org/llm-top-10/">10 Risiken beim Einsatz von LLMs und GenAI Anwendungen</a> und gibt Anleitungen zr Mitigation dieser Risiken:</p>
+<ol>
+<li>Prompt Injection</li>
+<li>Sensitive Information Disclosure</li>
+<li>Supply Chain</li>
+<li>Data and Model Poisoning</li>
+<li>Improper Output Handling</li>
+<li>Excessive Agengcy</li>
+<li>System Prompt Leakage</li>
+<li>Vector and Embedding Weaknesses</li>
+<li>Misinformation</li>
+<li>Unbound Consumption</li>
+</ol>
+<p>Eine KI-Plattform für die öffentliche Verwaltung sollte geeignete Maßnahmen für die Mitigation diese Risiken bereitstellen:</p>
+<h2 id="prompt-injection">Prompt Injection</h2>
+<p>Direkte Prompt Injection tritt auf, wenn die Prompt-Eingabe des Benutzers das Verhalten der GenAI Anwendung  (oder des dahinterliegenden Modells) auf unbeabsichtgte oder unerwartete Weise direkt verändert. Dabei kann die Eingabe entweder beabsichtigt oder unbeabsichtugt erfolgt sein. Dem gegenüber steht die indirekte Prompt Injection. Diese tritt auf, wenn die Eingabe über externe Quellen (Services, Tools) beeinflusst werden.</p>
+<p>Die Nachfolgende Grafik zeigt Mitigationsstretegien auf, die im Wesentlichen durch den Einsatz eines LLM Gateway erreicht werden können:</p>
+<p><img alt="security" src="../security_massnahmen.png" /></p>
+<ol>
+<li>
+<p>Schränke das Verhalten des Modells ein: Über den System Prompt können spezifische Anweisungen über die Rolle, die Fähigkeiten und die Grenzen des Modells erzwungen werden.</p>
+</li>
+<li>
+<p>Validiere Ausgabeformate: Verwende deterministischen Code, um Ausgabeformate zu überprüfen. </p>
+</li>
+<li>
+<p>Implementiere Input Filter: mittels Guardrails</p>
+</li>
+<li>
+<p>Implementiere Output Filter: mittels Guardrails</p>
+</li>
+<li>
+<p>Implement Role-Based Access Controll: Das Modell sollte immer mit der Rolle des jeweiligen Benutzers ausgeführt werden. Das gilt auch für RAG und Agenten.</p>
+</li>
+<li>
+<p>Implementiere Human-In-The-Loop Kontrollen: um Nicht-Autorisierte Aktionen zu verhindern.</p>
+</li>
+<li>
+<p>Implementiere Observability entlang der gesamten Ausführungsstrecke</p>
+</li>
+<li>
+<p>Führe regelmässig Angriffssimulationen durch: Das Modell wird dabei als immer als nicht-vertrauenswürdig eigestuft und seine Zuverlässigkeit überprüft.</p>
+</li>
+</ol>
 
 
 

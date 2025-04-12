@@ -22,10 +22,17 @@
 
 .custom-header {
   background-color: rgb(255, 252, 0); /* #FFFC00 */
+  color: rgb(42, 38, 35);             /* #2A2623 */
   padding: 20px;
   text-align: center;
 }
 
 .custom-header .logo {
   max-height: 50px;
+}
+
+.textlink {
+  text-decoration: underline; 
+  font-weight: bold;
+  color: blue
 }

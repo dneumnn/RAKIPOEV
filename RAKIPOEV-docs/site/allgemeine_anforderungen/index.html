@@ -10,8 +10,10 @@
       
       
       
-        <link rel="prev" href="../docs/glossar/">
+        <link rel="prev" href="..">
       
+      
+        <link rel="next" href="../ki_prinzipien/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -19,7 +21,7 @@
     
     
       
-        <title>About - Exposee</title>
+        <title>Allgemeine Anforderungen - Exposee</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about" class="md-skip">
+        <a href="#allgemeine-anforderungen" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              About
+              Allgemeine Anforderungen
             
           </span>
         </div>
@@ -197,11 +199,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../allgemeine_anforderungen/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Anforderungen
@@ -303,11 +307,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
         
   
     
@@ -396,25 +398,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -425,7 +430,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Anforderungen
@@ -436,10 +441,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../allgemeine_anforderungen/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -448,6 +462,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1044,19 +1059,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1065,7 +1071,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1088,8 +1093,14 @@
   
 
 
-<h1 id="about">About</h1>
-<p>Hier können wir die Inhaltsgeber beschreiben und aus der Titelzeile herausnehmen?</p>
+<h1 id="allgemeine-anforderungen">Allgemeine Anforderungen</h1>
+<p>Ziel der KI-Plattform ist es die Entwicklung, die Integarion und den Betrieb von horizontalen und vertikalen (Gen)AI Uses Cases für die öffentliche Verwaltung zu ermöglichen.</p>
+<p>Die Plattform für generative KI muss zentrale Anforderungen wie geringe Inferenzzeiten, hohe Skalierbarkeit, Flexibilität und die Entkopplung einzelner Komponenten erfüllen.</p>
+<p>Die  Architektur muss erlauben, jede Komponente unabhängig voneinander zu betreiben, was zukünftige technologische Entwicklungen und den Austausch von Modulen durch leistungsfähigere Lösungen erleichtert.</p>
+<p>Im Sinne der digitalen Souveränität liegt ein weiterer Fokus auf der Nutzung von Open-Source-Technologien.</p>
+<p>Da der technologische Fortschritt im Bereich generativer KI äußerst schnelllebig ist, ist eine strikte Trennung der Architektur in modulare, eigenständige Bausteine entscheidend. Diese Trennung erlaubt es, spezifische Teile der Plattform bei Bedarf durch fortschrittlichere Technologien zu ersetzen, ohne dabei die gesamte Architektur verändern zu müssen.</p>
+<p>Modularität und Wiederverwendbarkeit bilden das Grundprinzip beim der Implementierung horizontaler und vertikaler Use Cases. Die Plattform soll es ermöglichen, dass diese aus bereits bestehenden oder neuen Komponenten zusammengebaut werden können.</p>
+<p>Ist ein Use Case einmal implementiert, kann er von anderen Benutzern der Plattform über einen "Use Case Shop" im Rahmen von open source angepasst und wiederverwendet werden.</p>
 
 
 

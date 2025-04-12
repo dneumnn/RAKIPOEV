@@ -69,3 +69,8 @@ Dokumentation findet innerhalb docs statt.
 ### Publizierung
 
 Publish the website on [GitHub or GitLab Pages](https://squidfunk.github.io/mkdocs-material/publishing-your-site/).
+
+```bash
+cd RAKIPOEV-docs 
+mkdocs gh-deploy
+```

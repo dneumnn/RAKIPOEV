@@ -1,0 +1,478 @@
+<!-- docs/overrides/main.html -->
+<!DOCTYPE html>
+
+<html class="no-js" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../use_cases/simple_to_complex/" rel="prev"/>
+<link href="../../glossar/" rel="next"/>
+<link href="../../../assets/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>Referenzimplementierung - Exposee</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="/css/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../css/stylesheets/extra.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#implementation">
+          Zum Inhalt
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header>
+<div class="custom-header">
+<!--      <img src="../../../images/logo.png" alt="Logo" class="logo">-->
+<h1>Referenzarchitektur KI-Plattform für die Öffentliche Verwaltung</h1>
+</div>
+</header>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Kopfzeile" class="md-header__inner md-grid">
+<a aria-label="Exposee" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Exposee">
+<img alt="logo" src="../../../assets/flag.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Exposee
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Referenzimplementierung
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Wechsle zum Dunkel-Modus" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Wechsle zum Dunkel-Modus">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Wechsle in den Hell-Modus" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Wechsle in den Hell-Modus">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/dneumnn/RAKIPOEV" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Hauptnavigation" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        
+  
+    
+  
+  Exposee
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../allgemeine_anforderungen/">
+          
+  
+  Anforderungen
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../architecture/high_level_architecture/">
+          
+  
+  Referenzarchitektur
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../building_blocks/frontends/chat/">
+          
+  
+  Building Blocks
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../use_cases/ki_systeme/">
+          
+  
+  Use-Case-Umsetzung
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+        
+  
+    
+  
+  Referenzimplementierung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossar/">
+        
+  
+    
+  
+  Glossar
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../about/">
+        
+  
+    
+  
+  About
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Exposee" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Exposee">
+<img alt="logo" src="../../../assets/flag.png"/>
+</a>
+    Exposee
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/dneumnn/RAKIPOEV" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Exposee
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Anforderungen
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Anforderungen
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../allgemeine_anforderungen/">
+<span class="md-ellipsis">
+    Allgemeine Anforderungen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../ki_prinzipien/">
+<span class="md-ellipsis">
+    KI-Prinzipien
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../funktionale_anforderungen/">
+<span class="md-ellipsis">
+    Funktionale Anforderungen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../security/">
+<span class="md-ellipsis">
+    Sicherheits-Anforderungen
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Referenzarchitektur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Referenzarchitektur
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/high_level_architecture/">
+<span class="md-ellipsis">
+    High-Level-Architektur
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/data_management/">
+<span class="md-ellipsis">
+    Datenmanagement
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Building Blocks
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Building Blocks
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/chat/">
+<span class="md-ellipsis">
+    Chat-Frontends
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/admin/">
+<span class="md-ellipsis">
+    Admin-Frontends
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/office/">
+<span class="md-ellipsis">
+    Office-Plugins
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/services/services/">
+<span class="md-ellipsis">
+    Services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/model_registry/">
+<span class="md-ellipsis">
+    Model Registry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/llm_gateway/">
+<span class="md-ellipsis">
+    LLM-Gateway
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/inference_engines/">
+<span class="md-ellipsis">
+    Inference-Engines
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/mlops/">
+<span class="md-ellipsis">
+    MLOps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/observability/">
+<span class="md-ellipsis">
+    Observability
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/guardrails/">
+<span class="md-ellipsis">
+    Guardrails
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/iam/">
+<span class="md-ellipsis">
+    IAM
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/prompt_store/">
+<span class="md-ellipsis">
+    Prompt-Store
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Use-Case-Umsetzung
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Use-Case-Umsetzung
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../use_cases/ki_systeme/">
+<span class="md-ellipsis">
+    KI-Systeme
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../use_cases/simple_to_complex/">
+<span class="md-ellipsis">
+    Vom Einfachen zum Komplexen
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Referenzimplementierung
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Referenzimplementierung
+  </span>
+</a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kontext-sicht">
+<span class="md-ellipsis">
+      Kontext-Sicht
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossar/">
+<span class="md-ellipsis">
+    Glossar
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="implementation">Implementation</h1>
+<h2 id="kontext-sicht">Kontext-Sicht</h2>
+<p><div class="mxgraph" data-mxgraph='{"toolbar": "zoom", "tooltips": "1", "border": 25, "resize": "1", "edit": "_blank", "xml": "&lt;mxfile host=\"Electron\" agent=\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36\" version=\"24.7.8\"&gt;\n  &lt;diagram name=\"Seite-1\" id=\"8q0BNF9bNVLjtVRfz-j1\"&gt;\n    &lt;mxGraphModel dx=\"3278\" dy=\"1360\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"1169\" pageHeight=\"827\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Keycloak-Database\" c4Type=\"Container\" c4Technology=\"Postgres\" c4Description=\"Datebase for Identity &amp;amp; Access Management\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%:&amp;amp;nbsp;%c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"G0kDyYxJtT8kAcQlKLim-5\"&gt;\n          &lt;mxCell style=\"shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"111\" y=\"520\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"OpenWebUI-Database\" c4Type=\"Container\" c4Technology=\"Postgres\" c4Description=\"Datebase for Open WebUI\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%:&amp;amp;nbsp;%c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-1\"&gt;\n          &lt;mxCell style=\"shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"511\" y=\"520\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Keycloak-Server\" c4Type=\"Container\" c4Technology=\"Quarkus, WildFly, Hibernate\" c4Description=\"Identity &amp;amp; Access-Management\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-2\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"111\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"bcavRShBa2fLQeubObuq-3\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-2\" target=\"G0kDyYxJtT8kAcQlKLim-5\" edge=\"1\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"341\" y=\"360\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"581\" y=\"360\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-4\" value=\"Port 5432\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" parent=\"bcavRShBa2fLQeubObuq-3\" vertex=\"1\" connectable=\"0\"&gt;\n          &lt;mxGeometry x=\"-0.2667\" y=\"1\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Keycloak-Webclient\" c4Type=\"Container\" c4Technology=\"Apache Freemarker, JavaScript\" c4Description=\"Webclient for Identity &amp;amp; Access-Management\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-5\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"111\" y=\"130\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"bcavRShBa2fLQeubObuq-6\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-5\" target=\"bcavRShBa2fLQeubObuq-2\" edge=\"1\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"341\" y=\"360\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"581\" y=\"360\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-7\" value=\"Port 3000\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" parent=\"bcavRShBa2fLQeubObuq-6\" vertex=\"1\" connectable=\"0\"&gt;\n          &lt;mxGeometry x=\"-0.0667\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Keycloak\" c4Type=\"Container\" c4Application=\"Keycloak\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;&amp;lt;div style=&amp;quot;text-align: left&amp;quot;&amp;gt;%c4Name%&amp;lt;/div&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div style=&amp;quot;text-align: left&amp;quot;&amp;gt;[%c4Type%]&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-8\"&gt;\n          &lt;mxCell style=\"rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"41\" y=\"80\" width=\"370\" height=\"410\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"OpenWebUI\" c4Type=\"Container\" c4Application=\"OpenWebUI\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;&amp;lt;div style=&amp;quot;text-align: left&amp;quot;&amp;gt;%c4Name%&amp;lt;/div&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div style=&amp;quot;text-align: left&amp;quot;&amp;gt;[%c4Type%]&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-9\"&gt;\n          &lt;mxCell style=\"rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"451\" y=\"80\" width=\"370\" height=\"410\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"OpenWebUI Server\" c4Type=\"Container\" c4Technology=\"FastAPI\" c4Description=\"Chat-Application\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-10\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"516\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"bcavRShBa2fLQeubObuq-11\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;\" parent=\"1\" target=\"bcavRShBa2fLQeubObuq-1\" edge=\"1\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"631\" y=\"440\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"581\" y=\"360\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-12\" value=\"Port 5432\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" parent=\"bcavRShBa2fLQeubObuq-11\" vertex=\"1\" connectable=\"0\"&gt;\n          &lt;mxGeometry x=\"-0.1302\" y=\"1\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-15\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.533;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-13\" target=\"bcavRShBa2fLQeubObuq-10\" edge=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Chat-Webclient\" c4Type=\"Container\" c4Technology=\"Svelte, Tailwind, JavaScript\" c4Description=\"Webclient for Identity &amp;amp; Access-Management\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"bcavRShBa2fLQeubObuq-13\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" parent=\"1\" vertex=\"1\"&gt;\n            &lt;mxGeometry x=\"509\" y=\"120\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"bcavRShBa2fLQeubObuq-14\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-13\" edge=\"1\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"341\" y=\"360\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"351\" y=\"379\" as=\"targetPoint\"/&gt;\n              &lt;Array as=\"points\"&gt;\n                &lt;mxPoint x=\"431\" y=\"180\"/&gt;\n                &lt;mxPoint x=\"431\" y=\"379\"/&gt;\n              &lt;/Array&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-16\" value=\"&amp;lt;div&amp;gt;Authenticaton&amp;lt;/div&amp;gt;Port 3000\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" parent=\"bcavRShBa2fLQeubObuq-14\" vertex=\"1\" connectable=\"0\"&gt;\n          &lt;mxGeometry x=\"0.0408\" y=\"2\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"28\" y=\"-125\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"bcavRShBa2fLQeubObuq-17\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-10\" target=\"bcavRShBa2fLQeubObuq-2\" edge=\"1\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"481\" y=\"330\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"581\" y=\"360\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"bcavRShBa2fLQeubObuq-18\" value=\"Token Inspection&amp;lt;div&amp;gt;Port 3000&amp;lt;/div&amp;gt;\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" parent=\"bcavRShBa2fLQeubObuq-17\" vertex=\"1\" connectable=\"0\"&gt;\n          &lt;mxGeometry x=\"-0.6606\" y=\"-3\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"-17\" y=\"3\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"AI Server\" c4Type=\"Container\" c4Technology=\"FastAPI\" c4Description=\"Task, Tool, RAG, Agent\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-4\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"950\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-8\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-4\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-9\" value=\"/v1/api\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-8\"&gt;\n          &lt;mxGeometry x=\"-0.0087\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint y=\"8\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"LiteLLM\" c4Type=\"Container\" c4Technology=\"FastAPI\" c4Description=\"LLM-Gateway\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-10\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"871\" y=\"690\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"LiteLLM-Database\" c4Type=\"Container\" c4Technology=\"Postgres\" c4Description=\"Datebase for LiteLLM\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%:&amp;amp;nbsp;%c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-11\"&gt;\n          &lt;mxCell style=\"shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"509\" y=\"690\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-13\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-11\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"660\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"900\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-14\" value=\"Port 5432\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-13\"&gt;\n          &lt;mxGeometry x=\"0.3333\" y=\"5\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"15\" y=\"4\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-15\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-4\" target=\"zf8h4Xq1mqJJ9SoLXfPx-10\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"660\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"900\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-18\" value=\"OpenAI API\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-15\"&gt;\n          &lt;mxGeometry x=\"-0.4183\" y=\"-3\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-16\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-10\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"660\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"900\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-17\" value=\"OpenAI API\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-16\"&gt;\n          &lt;mxGeometry x=\"0.2968\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Ollama\" c4Type=\"Container\" c4Technology=\"Go\" c4Description=\"Inference Server\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-20\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1370\" y=\"770\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-21\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-20\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"660\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"900\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-28\" value=\"Port 11434\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-21\"&gt;\n          &lt;mxGeometry x=\"0.5929\" y=\"-1\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Name=\"vLLM Server\" c4Type=\"Container\" c4Technology=\"FastAPI\" c4Description=\"Inference Server\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-22\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1370\" y=\"630\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Llama.cpp\" c4Type=\"Container\" c4Technology=\"C\" c4Description=\"Inference Engine\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-23\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1680\" y=\"770\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-24\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" target=\"zf8h4Xq1mqJJ9SoLXfPx-23\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"1610\" y=\"830\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"1250\" y=\"930\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"vLLM Engine\" c4Type=\"Container\" c4Technology=\"C\" c4Description=\"Inference Engine\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-25\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1680\" y=\"630\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-26\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-22\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"550\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"1340\" y=\"700\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-27\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" target=\"zf8h4Xq1mqJJ9SoLXfPx-25\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"1600\" y=\"690\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"560\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Collector\" c4Type=\"Container\" c4Technology=\"FastAPI\" c4Description=\"OpenTelemetry\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-29\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1330\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Observability Backend\" c4Type=\"Container\" c4Technology=\"Langfuse\" c4Description=\"OpenTelemetry\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-30\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1680\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Observability-Database\" c4Type=\"Container\" c4Technology=\"Postgres or ClickHouse\" c4Description=\"Datebase for Observability\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%:&amp;amp;nbsp;%c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-31\"&gt;\n          &lt;mxCell style=\"shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"2020\" y=\"319\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-32\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" target=\"zf8h4Xq1mqJJ9SoLXfPx-29\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"1190\" y=\"379\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"940\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-36\" value=\"Port 4317, 4318\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-32\"&gt;\n          &lt;mxGeometry x=\"0.1693\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-33\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-29\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"700\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"940\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-37\" value=\"Port 4317, 4318\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-33\"&gt;\n          &lt;mxGeometry x=\"0.7925\" y=\"2\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"-1\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-34\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"bcavRShBa2fLQeubObuq-10\" target=\"zf8h4Xq1mqJJ9SoLXfPx-29\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"700\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"940\" y=\"540\" as=\"targetPoint\"/&gt;\n              &lt;Array as=\"points\"&gt;\n                &lt;mxPoint x=\"900\" y=\"349\"/&gt;\n                &lt;mxPoint x=\"900\" y=\"260\"/&gt;\n                &lt;mxPoint x=\"1230\" y=\"260\"/&gt;\n                &lt;mxPoint x=\"1230\" y=\"349\"/&gt;\n              &lt;/Array&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;mxCell id=\"zf8h4Xq1mqJJ9SoLXfPx-35\" value=\"Port 4317, 4318\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"zf8h4Xq1mqJJ9SoLXfPx-34\"&gt;\n          &lt;mxGeometry x=\"0.8165\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"-1\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-38\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-29\" target=\"zf8h4Xq1mqJJ9SoLXfPx-30\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"320\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"560\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-39\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-30\" target=\"zf8h4Xq1mqJJ9SoLXfPx-31\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"700\" y=\"540\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"940\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Name=\"Analyse-Webclient\" c4Type=\"Container\" c4Technology=\"\" c4Description=\"Webclient for Analyse Observability\" label=\"&amp;lt;font style=&amp;quot;font-size: 16px&amp;quot;&amp;gt;&amp;lt;b&amp;gt;%c4Name%&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;[%c4Type%: %c4Technology%]&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#E6E6E6&amp;quot;&amp;gt;%c4Description%&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" id=\"zf8h4Xq1mqJJ9SoLXfPx-40\"&gt;\n          &lt;mxCell style=\"rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];\" vertex=\"1\" parent=\"1\"&gt;\n            &lt;mxGeometry x=\"1680\" y=\"130\" width=\"240\" height=\"120\" as=\"geometry\"/&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n        &lt;object placeholders=\"1\" c4Type=\"Relationship\" id=\"zf8h4Xq1mqJJ9SoLXfPx-41\"&gt;\n          &lt;mxCell style=\"endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;\" edge=\"1\" parent=\"1\" source=\"zf8h4Xq1mqJJ9SoLXfPx-40\" target=\"zf8h4Xq1mqJJ9SoLXfPx-30\"&gt;\n            &lt;mxGeometry width=\"240\" relative=\"1\" as=\"geometry\"&gt;\n              &lt;mxPoint x=\"1670\" y=\"280\" as=\"sourcePoint\"/&gt;\n              &lt;mxPoint x=\"940\" y=\"540\" as=\"targetPoint\"/&gt;\n            &lt;/mxGeometry&gt;\n          &lt;/mxCell&gt;\n        &lt;/object&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<script src="/javascript/drawio-reload.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></body>
+</html>

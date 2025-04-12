@@ -1,0 +1,539 @@
+<!-- docs/overrides/main.html -->
+<!DOCTYPE html>
+
+<html class="no-js" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../security/" rel="prev"/>
+<link href="../data_management/" rel="next"/>
+<link href="../../../assets/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>High-Level-Architektur - Exposee</title>
+<link href="../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="/css/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../css/stylesheets/extra.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#high-level-architektur">
+          Zum Inhalt
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header>
+<div class="custom-header">
+<!--      <img src="../../../images/logo.png" alt="Logo" class="logo">-->
+<h1>Referenzarchitektur KI-Plattform für die Öffentliche Verwaltung</h1>
+</div>
+</header>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Kopfzeile" class="md-header__inner md-grid">
+<a aria-label="Exposee" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Exposee">
+<img alt="logo" src="../../../assets/flag.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Exposee
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              High-Level-Architektur
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Wechsle zum Dunkel-Modus" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Wechsle zum Dunkel-Modus">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Wechsle in den Hell-Modus" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Wechsle in den Hell-Modus">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/dneumnn/RAKIPOEV" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="Hauptnavigation" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        
+  
+    
+  
+  Exposee
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../allgemeine_anforderungen/">
+          
+  
+  Anforderungen
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  Referenzarchitektur
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../building_blocks/frontends/chat/">
+          
+  
+  Building Blocks
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../use_cases/ki_systeme/">
+          
+  
+  Use-Case-Umsetzung
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../implementation/implementation/">
+        
+  
+    
+  
+  Referenzimplementierung
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../glossar/">
+        
+  
+    
+  
+  Glossar
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../about/">
+        
+  
+    
+  
+  About
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Exposee" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Exposee">
+<img alt="logo" src="../../../assets/flag.png"/>
+</a>
+    Exposee
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/dneumnn/RAKIPOEV" title="Zum Repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Exposee
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Anforderungen
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Anforderungen
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../allgemeine_anforderungen/">
+<span class="md-ellipsis">
+    Allgemeine Anforderungen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../ki_prinzipien/">
+<span class="md-ellipsis">
+    KI-Prinzipien
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../funktionale_anforderungen/">
+<span class="md-ellipsis">
+    Funktionale Anforderungen
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../security/">
+<span class="md-ellipsis">
+    Sicherheits-Anforderungen
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    Referenzarchitektur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Referenzarchitektur
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    High-Level-Architektur
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    High-Level-Architektur
+  </span>
+</a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#offene-standards">
+<span class="md-ellipsis">
+      Offene Standards
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend-layer">
+<span class="md-ellipsis">
+      Frontend-Layer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#services-layer">
+<span class="md-ellipsis">
+      Services-Layer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inference-layer">
+<span class="md-ellipsis">
+      Inference-Layer
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data_management/">
+<span class="md-ellipsis">
+    Datenmanagement
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Building Blocks
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Building Blocks
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/chat/">
+<span class="md-ellipsis">
+    Chat-Frontends
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/admin/">
+<span class="md-ellipsis">
+    Admin-Frontends
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/frontends/office/">
+<span class="md-ellipsis">
+    Office-Plugins
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/services/services/">
+<span class="md-ellipsis">
+    Services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/model_registry/">
+<span class="md-ellipsis">
+    Model Registry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/llm_gateway/">
+<span class="md-ellipsis">
+    LLM-Gateway
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/inference/inference_engines/">
+<span class="md-ellipsis">
+    Inference-Engines
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/mlops/">
+<span class="md-ellipsis">
+    MLOps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/observability/">
+<span class="md-ellipsis">
+    Observability
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/guardrails/">
+<span class="md-ellipsis">
+    Guardrails
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/iam/">
+<span class="md-ellipsis">
+    IAM
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../building_blocks/cross_functional/prompt_store/">
+<span class="md-ellipsis">
+    Prompt-Store
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Use-Case-Umsetzung
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Use-Case-Umsetzung
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../use_cases/ki_systeme/">
+<span class="md-ellipsis">
+    KI-Systeme
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../use_cases/simple_to_complex/">
+<span class="md-ellipsis">
+    Vom Einfachen zum Komplexen
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../implementation/implementation/">
+<span class="md-ellipsis">
+    Referenzimplementierung
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossar/">
+<span class="md-ellipsis">
+    Glossar
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../about/">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="high-level-architektur">High-Level-Architektur</h1>
+<p>Folgende Darstellung zeigt die High-Level-Referenzarchitektur in 3 Schichten (Layer), die untenstehend näher beschrieben werden.</p>
+<p><div class="mxgraph" data-mxgraph='{"toolbar": "zoom", "tooltips": "1", "border": 25, "resize": "1", "edit": "_blank", "xml": "&lt;mxfile host=\"Electron\" agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36\" version=\"25.0.2\"&gt;\n  &lt;diagram name=\"Seite-1\" id=\"kuKYlrmnADWF5oXy6Rb2\"&gt;\n    &lt;mxGraphModel dx=\"458\" dy=\"312\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-7\" value=\"\" style=\"group\" vertex=\"1\" connectable=\"0\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"37\" y=\"79.99999999999999\" width=\"675.84\" height=\"450\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-10\" value=\"\" style=\"verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;\" vertex=\"1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\"&gt;\n          &lt;mxGeometry x=\"350\" y=\"-50\" width=\"290\" height=\"340\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-9\" value=\"\" style=\"verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;\" vertex=\"1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\"&gt;\n          &lt;mxGeometry x=\"120\" y=\"-50\" width=\"220\" height=\"500\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-8\" value=\"\" style=\"verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;\" vertex=\"1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\"&gt;\n          &lt;mxGeometry x=\"-30\" y=\"-50\" width=\"140\" height=\"500\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-5\" value=\"Chat-Frontend\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"-18\" y=\"62.93000000000002\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-6\" value=\"API Gateway\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1;rotation=-90;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"-22.34\" y=\"162.77000000000004\" width=\"360.69\" height=\"38\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-8\" value=\"API\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1;rotation=-90;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"201\" y=\"9.690000000000012\" width=\"38.75\" height=\"20.62\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-14\" value=\"Model Context Protocol\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-15\" value=\"RAG\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" y=\"61.93000000000001\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-16\" value=\"Tools\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" y=\"121.82000000000001\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-17\" value=\"Task based&amp;amp;nbsp;&amp;lt;div&amp;gt;Services&amp;lt;/div&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" y=\"181.93\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-18\" value=\"Agents\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" y=\"241.81000000000006\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-22\" value=\"Service Registry\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"131\" y=\"381.91\" width=\"107.99\" height=\"20\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-24\" value=\"Orchestration\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"211\" y=\"320.21000000000004\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-25\" value=\"\" style=\"endArrow=none;html=1;rounded=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"190\" y=\"260.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"190\" y=\"80.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-27\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" target=\"acryvnu5nMnUOujy7CY3-18\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"191\" y=\"261.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"131\" y=\"240.21000000000004\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-29\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-24\" target=\"acryvnu5nMnUOujy7CY3-18\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"81\" y=\"290.21000000000004\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"271\" y=\"284.21000000000004\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-33\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" target=\"acryvnu5nMnUOujy7CY3-15\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"191\" y=\"81.91000000000001\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"221\" y=\"21.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-34\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" target=\"acryvnu5nMnUOujy7CY3-16\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"190\" y=\"141.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"221\" y=\"51.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-35\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"191.06\" y=\"202.05\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"211.06\" y=\"202.05\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-36\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.777;entryY=0.026;entryDx=0;entryDy=0;entryPerimeter=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-5\" target=\"acryvnu5nMnUOujy7CY3-6\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"120\" y=\"181.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"140\" y=\"151.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-37\" value=\"Prompt-Store\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"401.5\" y=\"320.21000000000004\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-44\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-15\" target=\"acryvnu5nMnUOujy7CY3-14\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"401\" y=\"271.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"401\" y=\"91.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-47\" value=\"OpenAI API\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1;rotation=-90;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"321\" y=\"152.93\" width=\"180.69\" height=\"38\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-48\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#007FFF;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-15\" target=\"acryvnu5nMnUOujy7CY3-47\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"371\" y=\"161.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"391\" y=\"91.91000000000001\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"371\" y=\"71.91000000000001\"/&gt;\n              &lt;mxPoint x=\"371\" y=\"171.91000000000003\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-49\" value=\"LLM Gateway\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1;rotation=-90;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"371\" y=\"152.53000000000003\" width=\"180.69\" height=\"38\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-50\" value=\"Model Registry\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"437.01\" y=\"10.29\" width=\"108.99\" height=\"20.02\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-51\" value=\"Load Balancer\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"437\" y=\"41.91000000000001\" width=\"109\" height=\"20.02\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-52\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0.223;entryY=0.991;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-49\" target=\"acryvnu5nMnUOujy7CY3-51\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"381\" y=\"271.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"381\" y=\"91.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-53\" value=\"On-Premise&amp;lt;br&amp;gt;Inference Engine\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"501.69000000000005\" y=\"119.81999999999998\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"acryvnu5nMnUOujy7CY3-54\" value=\"Public &amp;lt;br&amp;gt;Model Provider&amp;amp;nbsp;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"501.69000000000005\" y=\"172.82\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-1\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#007FFF;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-18\" target=\"acryvnu5nMnUOujy7CY3-47\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"321\" y=\"141.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"371\" y=\"91.91000000000001\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"371\" y=\"271.91\"/&gt;\n              &lt;mxPoint x=\"371\" y=\"171.91000000000003\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-2\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#007FFF;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-17\" target=\"acryvnu5nMnUOujy7CY3-47\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"341\" y=\"281.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"402\" y=\"181.91000000000003\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"371\" y=\"211.91000000000003\"/&gt;\n              &lt;mxPoint x=\"371\" y=\"171.91000000000003\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-12\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-47\" target=\"acryvnu5nMnUOujy7CY3-49\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"260\" y=\"241.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"310\" y=\"191.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-13\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-51\" target=\"acryvnu5nMnUOujy7CY3-50\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"461\" y=\"21.91000000000001\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"471\" y=\"71.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-14\" value=\"\" style=\"endArrow=none;html=1;rounded=0;exitX=0.676;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-49\" target=\"acryvnu5nMnUOujy7CY3-53\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"482.409\" y=\"139.7285600000002\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"501\" y=\"141.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-15\" value=\"\" style=\"endArrow=none;html=1;rounded=0;exitX=0.38;exitY=0.985;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-49\" target=\"acryvnu5nMnUOujy7CY3-54\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"491\" y=\"149.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"512\" y=\"149.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-19\" value=\"Fachverfahren\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"-18\" y=\"119.81999999999998\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-21\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;entryX=0.615;entryY=-0.004;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"4rEBPdKsrA841RK2pKU5-19\" target=\"acryvnu5nMnUOujy7CY3-6\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"130\" y=\"191.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"149\" y=\"191.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-22\" value=\"Admin-Frontend\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"-18\" y=\"251.81\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-23\" value=\"Office-PlugIn\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"-18\" y=\"182.93\" width=\"120\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-24\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.442;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"4rEBPdKsrA841RK2pKU5-23\" target=\"acryvnu5nMnUOujy7CY3-6\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"130\" y=\"149.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"130\" y=\"201.91000000000003\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-25\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"4rEBPdKsrA841RK2pKU5-22\" target=\"acryvnu5nMnUOujy7CY3-6\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"130\" y=\"212.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"130\" y=\"261.91\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-26\" value=\"\" style=\"endArrow=none;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-22\" target=\"acryvnu5nMnUOujy7CY3-6\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"180\" y=\"161.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"230\" y=\"111.91000000000001\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-29\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"4rEBPdKsrA841RK2pKU5-31\" target=\"acryvnu5nMnUOujy7CY3-22\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"155\" y=\"411.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"181\" y=\"381.91\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-31\" value=\"Load Balancer\" style=\"rounded=0;whiteSpace=wrap;html=1;fillStyle=solid;fillColor=#FFFC00;fontStyle=1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"131\" y=\"411.91\" width=\"109\" height=\"20.02\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-36\" value=\"\" style=\"endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-6\" target=\"acryvnu5nMnUOujy7CY3-18\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"-10\" y=\"141.91000000000003\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"210\" y=\"271.91\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"190\" y=\"181.91000000000003\"/&gt;\n              &lt;mxPoint x=\"190\" y=\"261.91\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-38\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF8000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" source=\"acryvnu5nMnUOujy7CY3-18\" edge=\"1\" target=\"acryvnu5nMnUOujy7CY3-37\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"330\" y=\"281.5290592447917\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"400\" y=\"341.91\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"360\" y=\"262\"/&gt;\n              &lt;mxPoint x=\"360\" y=\"340\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-41\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF8000;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" target=\"acryvnu5nMnUOujy7CY3-17\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"360\" y=\"262\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"350\" y=\"201.91000000000003\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"360\" y=\"202\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-42\" value=\"\" style=\"endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF8000;\" parent=\"DlqzDO41IKm8nMjK7mlu-7\" target=\"acryvnu5nMnUOujy7CY3-15\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"360\" y=\"202\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"350\" y=\"81.91000000000001\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"360\" y=\"82.00000000000001\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-14\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Services&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\" style=\"text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\"&gt;\n          &lt;mxGeometry x=\"131\" y=\"-50\" width=\"101\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-15\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Inference&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\" style=\"text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"DlqzDO41IKm8nMjK7mlu-7\"&gt;\n          &lt;mxGeometry x=\"370\" y=\"-50\" width=\"270\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-5\" value=\"\" style=\"verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"10\" y=\"541.91\" width=\"370\" height=\"120\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-3\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;strokeColor=#007FFF;\" parent=\"1\" target=\"4rEBPdKsrA841RK2pKU5-4\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"19.00999999999999\" y=\"586.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"69.00999999999999\" y=\"586.91\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-4\" value=\"Model Usage\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" parent=\"1\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"38.00999999999999\" y=\"571.91\" width=\"101\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-8\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;\" parent=\"1\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"18.00999999999999\" y=\"616.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"38.00999999999999\" y=\"616.91\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"38.00999999999999\" y=\"616.91\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-9\" value=\"Service Usage\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" parent=\"1\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"38.00999999999999\" y=\"601.91\" width=\"101\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-43\" value=\"\" style=\"endArrow=classic;html=1;rounded=0;strokeColor=#FF8000;\" parent=\"1\" edge=\"1\"&gt;\n          &lt;mxGeometry width=\"50\" height=\"50\" relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"18.00999999999999\" y=\"647.91\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"38.00999999999999\" y=\"647.91\" as=\"targetPoint\"/&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"38.00999999999999\" y=\"647.91\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-44\" value=\"Prompt Usage\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" parent=\"1\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"38.00999999999999\" y=\"631.91\" width=\"101\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"4rEBPdKsrA841RK2pKU5-45\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Legende&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" parent=\"1\" vertex=\"1\"&gt;\n          &lt;mxGeometry x=\"11.009999999999991\" y=\"541.91\" width=\"101\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"DlqzDO41IKm8nMjK7mlu-13\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Frontends&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\" style=\"text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"17.66\" y=\"29.999999999999986\" width=\"101\" height=\"40\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></p>
+<h2 id="offene-standards">Offene Standards</h2>
+<p>Die (Referenz-)implementierung sollte so gestaltet werden, dass alle Komponenten cloud-nativ auf einem Kubernetes-Cluster betrieben werden können.</p>
+<p>Die vier wichtigsten offenen Standrads, sind OpenAI API, Model Context Protocol, OpenID Connect und OpenTelemetry:</p>
+<ul>
+<li>OpenAI API kapselt das Inference Backend und die Modelle</li>
+<li>Model Context Protocol abstrahiert den Tool- und Datenzugriff über MCP Server.</li>
+<li>OpenID Connect sorgt für Authentifizierung und liefert beispielsweise über einen Keycloak User und Rolle</li>
+<li>OpenTelemetry ist ein offener Standard für Observability: Logging, Tracing und Metriken. </li>
+</ul>
+<p><img alt="Offene Standards" src="../open_standards.png"/></p>
+<p>Komponenten der Referenzarchitektur lassen sich in drei Layer einteilen. Eine besondere Herausforderung bei der Implemetierung der verschiedenen Komponenten (Building Blocks) innerhalb der Layers liegt in der föderierten Benutzer- und Modell-Verwaltung. Diese wird im Kapitel <a href="../data_management/">Datenmanagement</a> beschrieben.</p>
+<h2 id="frontend-layer">Frontend-Layer</h2>
+<p>Die Referenzarchitektur sieht verschiedene Frontends vor. Der Frontend-Layer umfasst die Benutzeroberflächen für Administratoren und Endnutzer, welche auf die KI-Dienste zugreifen und sie verwalten können.</p>
+<p>Als "offensichtlichste" seien genannt:</p>
+<ul>
+<li>ein Chat-Frontend,</li>
+<li>Fachverfahren</li>
+<li>Office-PlugIn</li>
+<li>ein Admin-Frontend</li>
+</ul>
+<p>Alle Frontends können über das API-Gateway auf die verschiedenen Services zugreifen.</p>
+<h2 id="services-layer">Services-Layer</h2>
+<p>Der Services-Layer beinheltet zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Services sind über das API-Gateway aufrufbar. Integriert im API-Gateway ist eine Service-Registry. Das API-Gateway dient außerdem als Load Balancer für die Service-Aufrufe.</p>
+<p>Folgende erste Servicearten sind identifziert:</p>
+<ul>
+<li>
+<p><strong>RAG</strong>: Über <a href="../../glossar/#RAG">RAGs</a> können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. <em>Beispiel: der Service "DocumentSearch".</em></p>
+</li>
+<li>
+<p><strong>Tools:</strong> sind verschiedene Werkzeuge, die keinen Zugriff auf <a href="../../glossar/#Large Language Model">Large Language Models</a> benötigen. <em>Beispiele: ein Taschenrechner, Websuche oder das aktuelle Wetter</em>.</p>
+</li>
+<li>
+<p><strong>Task based Services:</strong> stellen auf Basis von LLMs Funktionen zur Verfügung. <em>Beispiele: Summarization, Planning und Reasoning"</em>.</p>
+</li>
+<li>
+<p><strong>Agents</strong>  sind Services, die autonom oder semi-autonom eine Aufgabe erfüllen. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen.</p>
+</li>
+</ul>
+<h2 id="inference-layer">Inference-Layer</h2>
+<p>Der Inference Layer ist für die Verwaltung und Ausführung von Modellen verantwortlich.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.path", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+<script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<script src="/javascript/drawio-reload.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></body>
+</html>
