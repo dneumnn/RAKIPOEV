@@ -20,7 +20,7 @@ LLMOps umfasst eine Reihe von Aktivitäten, darunter:
 
 ![MLOps](mlops.png)
 
-Unter der Annahme, dass für die Referenz-Architektur auf vortrainierten Foundation-Modellen aufgesetzt werden kann, alkso keine LLMs von Null auf trainiert werden müssen, liegt der Schwerpunkt innerhalb LLMOps auf:
+Unter der Annahme, dass für die Referenz-Architektur auf vortrainierten Foundation-Modellen aufgesetzt werden kann, also keine LLMs von Null auf trainiert werden müssen, liegt der Schwerpunkt innerhalb LLMOps auf:
 
 - Finetunen von LLMs
 - Bereitstellen von LLMs (inklusive Compliance-Prüfung)

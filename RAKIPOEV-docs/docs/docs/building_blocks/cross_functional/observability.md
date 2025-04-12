@@ -5,7 +5,7 @@ Observability von künstlicher Intelligenz ist ein Konzept, das die Fähigkeit b
 Ziele von Observability sind:
 
 - Grundlegende Probleme identifizieren
-- Qualitäts und Leistung kontinuierlich überwachen und verbessern
+- Qualität und Leistung kontinuierlich überwachen und verbessern
 
 Dazu ist es wichtig kontinuierlich Daten zu sammeln und zu analysieren:
 
@@ -55,7 +55,7 @@ Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  [Generative 
 - Time between Tokens (TBT)
 - Tokens per Second (TPS)
 - Time per Output Token (TPOT)
-- Total Latency (Gesamtzeit, die benötigt wird, um einen Anfrage-Antwort-Zyklus abzuschliessen)
+- Total Latency (Gesamtzeit, die benötigt wird, um einen Anfrage-Antwort-Zyklus abzuschließen)
 
 ### RAG-Metriken ([ragas](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/))
 
@@ -88,7 +88,7 @@ Openlit folgt den [Semantic Conventions von OpenTelemetry](https://github.com/op
 
 #### OpenLLMetry
 
-OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an an beliebige Observability-Lösungen, welche auf OpenTelemetry aufseten angeschlossen werden.
+OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an an beliebige Observability-Lösungen, welche auf OpenTelemetry aufsetzen angeschlossen werden.
 
 #### Langfuse
 
