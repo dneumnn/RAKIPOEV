@@ -1,5 +1,7 @@
 # Sicherheits-Anforderungen
 
+## OWASP
+
 Das [Open Worldwide Application Security Project (OWASP)](https://owasp.org/about/) beschreibt [10 Risiken beim Einsatz von LLMs und GenAI Anwendungen](https://genai.owasp.org/llm-top-10/) und gibt Anleitungen zur Mitigation dieser Risiken:
 
 1. Prompt Injection

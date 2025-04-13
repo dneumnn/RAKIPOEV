@@ -5,10 +5,10 @@ repo_url: https://github.com/dneumnn/RAKIPOEV
 nav:
     - index.md
     - Anforderungen:
-      - Allgemeine Anforderungen: allgemeine_anforderungen.md
-      - KI-Prinzipien: ki_prinzipien.md
-      - Funktionale Anforderungen: funktionale_anforderungen.md
-      - Sicherheits-Anforderungen: security.md
+      - Allgemeine Anforderungen: docs/requirements/allgemeine_anforderungen.md
+      - KI-Prinzipien: docs/requirements/ki_prinzipien.md
+      - Funktionale Anforderungen: docs/requirements/funktionale_anforderungen.md
+      - Sicherheits-Anforderungen: docs/requirements/security.md
     - Referenzarchitektur: 
       - High-Level-Architektur: docs/architecture/high_level_architecture.md
       - Datenmanagement: docs/architecture/data_management.md
@@ -30,7 +30,7 @@ nav:
       - Vom Einfachen zum Komplexen: docs/use_cases/simple_to_complex.md
     - Referenzimplementierung: docs/implementation/implementation.md
     - Glossar: docs/glossar.md
-    - About: about.md
+    - About: docs/requirements/about.md
 
 theme:
   name: material
