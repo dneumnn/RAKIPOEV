@@ -28,7 +28,7 @@ nav:
     - Use-Case-Umsetzung: 
       - KI-Systeme: docs/use_cases/ki_systeme.md
       - Vom Einfachen zum Komplexen: docs/use_cases/simple_to_complex.md
-    - Referenzimplementierung: docs/implementation/implementation.md
+    #- Referenzimplementierung: docs/implementation/implementation.md
     #- Glossar: docs/glossar.md
     - About: docs/about/about.md
 
