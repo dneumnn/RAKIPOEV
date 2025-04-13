@@ -75,3 +75,10 @@ Publish the website on [GitHub or GitLab Pages](https://squidfunk.github.io/mkdo
 cd RAKIPOEV-docs 
 mkdocs gh-deploy
 ```
+
+Delete old files before redeploying your page with:
+
+```bash
+cd RAKIPOEV-docs 
+mkdocs gh-deploy --clean --dirty --force
+```
