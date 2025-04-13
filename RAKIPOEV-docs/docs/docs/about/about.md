@@ -1,7 +1,7 @@
 # Über die Autoren
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/docs/about/dr_michael_wissen.jpg" alt="Dr. Michael Wissen" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="../dr_michael_wissen.jpg" alt="Dr. Michael Wissen" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Dr. Michael Wissen</h3>
         <p><strong>CTO | IT-Koordination</strong></p>
@@ -10,7 +10,7 @@
 </div>
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/docs/about/dr_kathrin_schumacher.jpg" alt="Dr. Kathrin Schumacher" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="../dr_kathrin_schumacher.jpg" alt="Dr. Kathrin Schumacher" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Dr. Kathrin Schumacher</h3>
         <p><strong>Referentin IT-Koordination, Innenministerium Baden-Württemberg</strong></p>
@@ -19,7 +19,7 @@
 </div>
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/docs/about/dominik_neumann.jpg" alt="Dominik Neumann" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="../dominik_neumann.jpg" alt="Dominik Neumann" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Dominik Neumann</h3>
         <p><strong>Senior Lösungs-Architekt im Bereich Public | Partner bei <a href="https://www.exxeta.com"> Exxeta </a> </strong></p>
@@ -29,7 +29,7 @@
 </div>
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/docs/about/tobias_haeusser.jpg" alt="Tobias Häusser" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="../tobias_haeusser.jpg" alt="Tobias Häusser" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Tobias Häusser</h3>
         <p><strong>Senior Programmleiter im Bereich Public bei <a href="https://www.exxeta.com"> Exxeta </a> </strong></p>
