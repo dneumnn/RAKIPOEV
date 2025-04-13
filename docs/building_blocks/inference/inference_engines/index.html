@@ -203,7 +203,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../allgemeine_anforderungen/" class="md-tabs__link">
+        <a href="../../../requirements/allgemeine_anforderungen/" class="md-tabs__link">
           
   
   Anforderungen
@@ -275,41 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../implementation/implementation/" class="md-tabs__link">
-        
-  
-    
-  
-  Referenzimplementierung
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../glossar/" class="md-tabs__link">
-        
-  
-    
-  
-  Glossar
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../../about/about/" class="md-tabs__link">
         
   
     
@@ -441,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../allgemeine_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/allgemeine_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ki_prinzipien/" class="md-nav__link">
+      <a href="../../../requirements/ki_prinzipien/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../funktionale_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/funktionale_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../security/" class="md-nav__link">
+      <a href="../../../requirements/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1157,47 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../implementation/implementation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Referenzimplementierung
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../glossar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossar
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1156,7 @@
 
 <h1 id="inference">Inference</h1>
 <h2 id="server-und-engine">Server und Engine</h2>
-<p>Die Nutzung eines Modells (LLMs) zur Inference kann grundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmerts sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prediction, sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.</p>
+<p>Die Nutzung eines Modells (LLMs) zur Inference kann grundsätzlich in zwei Komponenten unterteilt werden: Die Inference Engine und der Inference Server. Die Inference Engine kümmert sich um das Laden des Modells, den Aufruf des Modells zur Next-Tolken-Prediction, sowie das das Stapeln der Anfragen (Batching), während der Inference Server die Weiterleitung der Benutzeranfragen übernimmt.</p>
 <p>Die Inference Engine kann eine Vielzahl von Optimierungstechniken unterstützen. Im Kern handelt es sich um Python- oder C++-Bibliotheken. Sie sorgen für das Stapeln der Anfragen (Batching), die von den Benutzern an unseren Chatbot gerichtet werden, und für die Generierung der Antworten auf diese Anfragen.</p>
 <p>Der Inference Server übernimmt die Orchestrierung der HTTP/gRPC-Anfragen, die von den Benutzern eingehen. Die Server nehmen die Benutzer-Anfragen entgegen und stellen sie in die Warteschlange, bis sie sie an die Inference Engine weiterleiten, die dann die Antwort generiert.</p>
 <p><img alt="image" src="../inference.png" /></p>
@@ -1264,7 +1190,7 @@
 </tbody>
 </table>
 <h2 id="auf-was-solle-man-achten">Auf was solle man achten</h2>
-<p>Bei der Auswahl von Inference Server und Inference Engine sind folgende Eingenschaften relevant, die sich auf Durchsatz und Latenz auswirken:</p>
+<p>Bei der Auswahl von Inference Server und Inference Engine sind folgende Eigenschaften relevant, die sich auf Durchsatz und Latenz auswirken:</p>
 <p>Inference Engine:</p>
 <ul>
 <li>Speicher-Management (KV-Cache): FIFO und Speicherreservierung</li>
@@ -1297,7 +1223,7 @@
 <p><a href="https://github.com/bentoml/OpenLLM">OpenLLM</a> ist ein Inference Server welcher entweder Pytorch als Backend or vLLM als Inference Engine verwendet. Ist ein Modell nicht für vLLM verfügbar, dann wird es mit dem Pytorch Backend geladen.</p>
 <h3 id="weitere-inference-server">Weitere Inference Server</h3>
 <ul>
-<li>Text Generation Inteface (TGI) von Hugging Face</li>
+<li>Text Generation Interface (TGI) von Hugging Face</li>
 <li>TorchServe</li>
 <li>Ray</li>
 <li>Nvidia TensorRT-LLM (TRTLMM)</li>

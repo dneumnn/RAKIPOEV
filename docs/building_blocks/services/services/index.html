@@ -203,7 +203,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../allgemeine_anforderungen/" class="md-tabs__link">
+        <a href="../../../requirements/allgemeine_anforderungen/" class="md-tabs__link">
           
   
   Anforderungen
@@ -275,41 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../implementation/implementation/" class="md-tabs__link">
-        
-  
-    
-  
-  Referenzimplementierung
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../glossar/" class="md-tabs__link">
-        
-  
-    
-  
-  Glossar
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../../about/about/" class="md-tabs__link">
         
   
     
@@ -441,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../allgemeine_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/allgemeine_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ki_prinzipien/" class="md-nav__link">
+      <a href="../../../requirements/ki_prinzipien/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../funktionale_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/funktionale_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../security/" class="md-nav__link">
+      <a href="../../../requirements/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,12 +787,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Retrieval-Augmented-Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kandidaten-fur-die-implementierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kandidaten für die Implementierung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#agent" class="md-nav__link">
     <span class="md-ellipsis">
       Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaboration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collaboration
     </span>
   </a>
   
@@ -1112,47 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../implementation/implementation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Referenzimplementierung
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../glossar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossar
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1185,51 +1135,218 @@
 
 <h1 id="services">Services</h1>
 <p>Services sind zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Ziel ist es diese für die unterschiedlichen Use cases der öffentlichen Verwaltung wiederzuverwenden. Um dieses Ziel zu erreichen ist es notwendig, die Services nach einheitlichen Standards zu entwickeln, sie mit einem API zu versehen (über das sie gleichartig aufgerufen werden können) und als containerisierte Komponenten auszuliefern.</p>
-<p>Wir unterscheiden vier Service Tpyen:</p>
+<p>Wir unterscheiden vier Service Typen:</p>
 <p><img alt="image" src="../services.png" /></p>
 <h2 id="task">Task</h2>
 <p>Ein Task ist ein Model-Task-driven Service. Hierbei wird eine spezifische Aufgabe mit einem spezifischen Modell ausgeführt. Dabei ist das Modell für die Aufgabe optimiert. Die Optimierung kann durch verschiedene Arten des Trainings (Supervised Finetuning, Reinforcement Learning, ..) erfolgen.</p>
 <p>Ein Vielzahl von Model-Tasks und geeignete Modell finden sich auf <a href="https://huggingface.co/tasks">Hugging Face</a>.</p>
-<p>Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Text Manipiulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.</p>
+<p>Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Text Manipulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.</p>
 <p><img alt="image" src="../task.png" /></p>
 <h2 id="tool">Tool</h2>
-<p>Ein Tool ist ein Service mit dem das System mit seiner Aussenwelt (seinem Environment) interagieren kann. Im Gegensatz zu Tasks haben Tools keinen Zugriff auf ein Modell, dafür aber auf das Environment des Systems.</p>
+<p>Ein Tool ist ein Service mit dem das System mit seiner Außenwelt (seinem Environment) interagieren kann. Im Gegensatz zu Tasks haben Tools keinen Zugriff auf ein Modell, dafür aber auf das Environment des Systems.</p>
 <p>Typische Environments sind das Internet, Fachverfahren, aber auch eine Sandbox, in der Code ausgeführt werden kann.</p>
 <p><img alt="image" src="../tool.png" /></p>
 <h3 id="sandbox">Sandbox</h3>
 <p>Die sichere Ausführung von durch ein LLM erzeugten Code sollte entweder auf einer isolierten virtuellen Maschine oder über ein externes API (z.B. <a href="https://e2b.dev">E2B</a>) erfolgen.</p>
 <h3 id="mcp-server">MCP Server</h3>
-<p>Die Anbindung von Tools kann über das Model Context Protokoll (MCP) standardisiert werden.</p>
+<p>Mithilfe des Model Context Protokolls (MCP) lassen sich verschiedene Datenquellen (Ressourcen, Tools, Templates) standardisiert an KI-Anwendungen anbinden. Die Kommunikation erfolgt dabei bidirektional, so dass Datenquellen von einer KI-Anwendung gezielt angesprochen werden können, um bestimmte Informationen bereitzustellen. Diesen Zweck erfüllen MCP-Server, welche die Implementierung der Datenbereitstellung beinhalten. Die Anbindung von Tools kann somit über das Model Context Protokoll (MCP) standardisiert werden.</p>
 <h2 id="retrieval-augmented-generation">Retrieval-Augmented-Generation</h2>
 <p>Retrieval-Augmented-Generation (kurz RAG ist ein komplexer Service, bei dem zu einem Prompt (Anfrage des Benutzers) Wissen aus vorhandenen Datenquellen selektiert, von dem man ausgeht, dass es als Faktenwissen in einem LLM nicht vorhanden ist. Der Prompt wird um das selektierte Wissen erweitert. Sowohl für das Retrieval, als auch für das Augmentation gibt es zahl reiche Umsetzungs-Muster, die innerhalb eines RAG angewandt werden können, um das gewünschte Ergebnis zu erzeugen.</p>
-<p>Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-Datenbanken und Indexe (BM25) eingesetzt. Der Einsatz eines RAG bedingt einer vorgelagert Data-Pipeline, mithile derer man das Wissen geeignet aufbereitet in die ausgewählte Datenquelle überführt.</p>
+<p>Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-Datenbanken und Indexe (BM25) eingesetzt. Der Einsatz eines RAG bedingt einer vorgelagert Data-Pipeline, mithilfe derer man das Wissen geeignet aufbereitet in die ausgewählte Datenquelle überführt.</p>
 <p><img alt="image" src="../rag.png" /></p>
-<p>RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf Vector-Similarity (semantische Ähnlichkeit zwischen Text-Chunks) hin zu komplexeren graphen-basierten Verfahren weiterentwickelt.</p>
+<p>RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf Vector-Similarity (semantische Ähnlichkeit zwischen Text-Chunks) hin zu komplexeren Grafen-basierten Verfahren weiterentwickelt.</p>
+<h3 id="kandidaten-fur-die-implementierung">Kandidaten für die Implementierung</h3>
 <table>
 <thead>
 <tr>
 <th>RAG</th>
-<th>Idee</th>
-<th>Vor- und Nachteile</th>
+<th>Lizenz</th>
+<th>Einsatzzweck</th>
+<th>Skalierbarkeit</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://microsoft.github.io/graphrag/">GraphRAG</a></td>
+<td><a href="https://microsoft.github.io/graphrag/">GraphRAG</a> <a href="https://arxiv.org/pdf/2404.16130">Arxiv</a></td>
+<td>MIT Licence</td>
+<td>Produktion</td>
+<td>--</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>GraphRag basierte Ansätze nutzen strukturiertes Wissen. Dazu muss das Wissen im Vorfeld aus den Daten extrahiert und in Form eines Wissensgraphen aufbereitet werden. Auf einen Wissensgraphen gespeichert in einer Graphendatenbank kann mittels Cipher-Abfragen zugegriffen werden. Hierzu muss die vom Nutzer des RAG gestellte Frage mittels LLM in eine geeigente Cipher-Abfrage umgewandelt werden. Das bedeutet, dass aus der Frage des Benutzers Entitäten und Beziehungen extrahiert werden, um damit in die Wissensdatenbank zu suchen. GraphRag setzt zusätzlch das Leiden Community Detection Clustering-Verfahren ein, um Knoten im Wissengraphen zu clustern. Auf diese Weise werden zusätzliche Knoten erzeugt, welche mit einer Zusammenfassung versehen werden. Dies ermöglicht sowohl eine lokale Suche (Knoten im Wissensgraph) als auch eine globale Suche (Cummunities).</td>
+<td>Vor- und Nachteile: GraphRags neigen zu Information-Overflow, also zu viele Informationen als Antwort zu liefern. Zudem ist die Aufbereitung des Wissensgraph in der Regel ein kostspieliger Prozess. Von Vorteil ist, dass die Aufbereitung inkrementell erfolgen kann.</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/HKUDS/LightRAG">LigthRAG</a> <a href="https://arxiv.org/pdf/2410.05779">Arxiv</a></td>
+<td>MIT Licence</td>
+<td>Vor-Produktion</td>
+<td></td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>LightRAG implementiert einen Index-Graph (als Wissensgraph), um damit die Performanz zu verbessern. In einem Deduplication-Schritt werden zudem redundante Knoten und Kanten zusammengeführt. Durch die Kombination von Graphenstrukturen mit Vektordarstellungen wird ein tieferen Einblick in die Zusammenhänge zwischen den Entitäten gewährt. Dies ermöglicht es dem Suchalgorithmus, sowohl lokale als auch globale Schlüsselwörter effektiv zu nutzen. Dadurch wird der Suchprozess effizienter und die Relevanz der Ergebnisse verbessert.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/deepset-ai/haystack">Haystack (deepset-ai)</a></td>
+<td>Apache License 2.0</td>
+<td>Produktion</td>
+<td>Ausgelegt für die Bearbeitung großer Dokumentenbestände</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Haystack ist ein RAG-Framework, das Abfragen, Einbettungsmodelle und LLMs orchestriert. Der primäre Fokus liegt auf hoch performanten Suchsystemen.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/infiniflow/ragflow">RAGFlow (infiniflow)</a></td>
+<td>Apache License 2.0</td>
 <td>--</td>
 <td>--</td>
 </tr>
 <tr>
-<td><a href="https://github.com/HKUDS/LightRAG">LiteRAG</a></td>
+<td><a href="https://github.com/neuml/txtai">txtai (neuml)</a></td>
+<td>Apache License 2.0</td>
+<td>Produktion</td>
 <td>--</td>
+</tr>
+<tr>
+<td><a href="https://github.com/stanford-oval/storm">STORM</a> <a href="https://www.arxiv.org/pdf/2408.15232">Arxiv</a></td>
+<td>MIT Licence</td>
+<td>Vor-Produktion</td>
 <td>--</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>STORM ist ein System, das Wikipedia-ähnliche Artikel auf der Grundlage einer Internetsuche von Grund erstellt. Co-STORM hat seine Funktion um ein kollaboratives System verbessert.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/SciPhi-AI/R2R">R2R</a></td>
+<td>MIT Licence</td>
+<td>Produktion</td>
+<td>--</td>
+</tr>
+<tr>
+<td><a href="https://github.com/langchain-ai/langchain">LangChain</a></td>
+<td>MIT Licence</td>
+<td>Produktion</td>
+<td>eingeschränkt</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Das primäre Ziel von LangChain ist es, die Entwicklung komplexer LLM-Anwendungen zu vereinfachen. Es verfolgt einen modularen Ansatz und basiert auf sogenannten Chains (Ketten), die weitgehend dem Pipe &amp; Filter Muster genügen.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/run-llama/llama_index">LlamaIndex</a></td>
+<td>MIT Licence</td>
+<td>Produktion</td>
+<td>--</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Das primäre Ziel von LlamaIndex ist es den Indexing-Prozess zu optimieren. Also das Chunken und Einbetten von Text mittels Einbettungsmodellen und Vektordatenbanken.</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="agent">Agent</h2>
-<p>Ein Agent ist ein Service, der autonom oder semi-autonom eine Aufgabe erfüllt. Die Aufgaben-Steuerung kann eintweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen. </p>
-<p><a href="https://arxiv.org/abs/2501.00881">Vertikale Agenten</a> sind spezialisierte Agenten die neben dem LLM, das zur Aufgaben-Steuerung verwendet wird zusätzlich über ein Kurzzeit-Gedächtnis, geeignete Tools (mit dem sie ihre Aussenwelt verändern können) und weitere kognitive Fähigkeiten verfügen.</p>
+<p>Ein Agent ist ein Service, der autonom oder semi-autonom eine Aufgabe erfüllt. Die Aufgaben-Steuerung kann entweder durch eine SOP (Standard Operating Procedure) vorgegeben werden oder mittels LLM in einem Planungs-Task erzeugt werden. Ein Agent kann sich dann je nach Aufgabe anderer Services bedienen. </p>
+<p><a href="https://arxiv.org/abs/2501.00881">Vertikale Agenten</a> sind spezialisierte Agenten die neben dem LLM, das zur Aufgaben-Steuerung verwendet wird zusätzlich über ein Kurzzeit-Gedächtnis, geeignete Tools (mit dem sie ihre Außenwelt verändern können) und weitere kognitive Fähigkeiten verfügen.</p>
 <p><img alt="image" src="../agent.png" /></p>
+<p>KI-Agenten-Frameworks können anhand zwei unterschiedlichen Kriterien bewertet werden:</p>
+<ol>
+<li>Grad an Abstraktionsschichten auf denen sie aufbauen</li>
+<li>Automatisierungs-Autonomie. Wie stark werden Arbeitsabläufe vergegeben bzw. dürfen diese durch das LLM bestimmt werden.</li>
+</ol>
+<p>Im Folgenden wollen wir zwischen Agenten Frameworks, welche den Fokus auf den Agenten legen und die Steuerung bzw. Collaboration der Agenten unterscheiden.</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Lizenz</th>
+<th>Einsatzzweck</th>
+<th>Skalierbarkeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://ai.pydantic.dev">Pydantic AI</a></td>
+<td>MIT Licence</td>
+<td>Produktion</td>
+<td></td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Während Pydantic als Validation Layer von OpenAI SDK, Anthropic SDK, LangChain, LlamaIndex, AutoGPT, Transformers, CrewAI, Instructor und weiteren Frameworks verwendet wird, erweitert Pydantic AI seinen ZType-checking Mechanismus auf Agenten.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Die Abstraktionen des Frameworks sind auf ein Minimum reduziert.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/huggingface/smolagents">smolagents</a> <a href="https://huggingface.co/docs/smolagents/index">Hugging Face</a></td>
+<td>Apache License 2.0</td>
+<td>Produktion</td>
+<td></td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>Die Abstraktionen von smolagents sind auf ein Minimum reduziert. Das Framework liefert bereits spezialisierte Agenten und Tools</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="collaboration">Collaboration</h2>
+<table>
+<thead>
+<tr>
+<th>Collaboration</th>
+<th>Lizenz</th>
+<th>Einsatzzweck</th>
+<th>Skalierbarkeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://microsoft.github.io/autogen/0.2/">AutoGen</a> <a href="https://github.com/microsoft/autogen">Github</a></td>
+<td>CC-BY-4.0 Licence, MIT License</td>
+<td>Produktion</td>
+<td></td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>AutoGen ist ein Multi-Agenten Framework</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://n8n.io">n8n</a> <a href="https://github.com/n8n-io/n8n">GitHub</a></td>
+<td></td>
+<td>Produktion</td>
+<td>--</td>
+</tr>
+<tr>
+<td>Idee:</td>
+<td>AI Workflow-Automation</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 
