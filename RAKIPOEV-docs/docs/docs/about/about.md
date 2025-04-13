@@ -1,16 +1,7 @@
 # Über die Autoren
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/about/dominik_neumann.jpg" alt="Dominik Neumann" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
-    <div>
-        <h3>Dominik Neumann</h3>
-        <p><strong>Senior KI Architekt im Bereich Public</strong></p>
-        <p>Mit mehr als 25 Jahren Erfahrung in verschiedenen IT-Rollen - als Software-Architekt, Transformations-Experte und Business-Manager - hat Dominik Neumann besondere Erfahrung als Enterprise-Architekt in der Data- und Business-Driven IT Modernisierung & IT-Strategie. Er ist Berater und Data Scientist in Modernisierungsprojekten mit Fokus auf dem Alignement zwischen organisationalem Schnitt und Architektur. Seine Schwerpunkte liegen im Bereich der Analyse großer monolithischer Systeme und Anwendungslandschaften, in der Ableitung von Strategien und Maßnahmen zur fachlichen und technologischen Modernisierung, sowie in der Identifikation und Implementierung notwendiger Veränderungen.</p>
-    </div>
-</div>
-
-<div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/about/dr_michael_wissen.jpg" alt="Dr. Michael Wissen" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="/docs/about/dr_michael_wissen.jpg" alt="Dr. Michael Wissen" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Dr. Michael Wissen</h3>
         <p><strong>CTO | IT-Koordination</strong></p>
@@ -19,7 +10,7 @@
 </div>
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/about/dr_kathrin_schumacher.jpg" alt="Dr. Kathrin Schumacher" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="/docs/about/dr_kathrin_schumacher.jpg" alt="Dr. Kathrin Schumacher" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Dr. Kathrin Schumacher</h3>
         <p><strong>Referentin IT-Koordination, Innenministerium Baden-Württemberg</strong></p>
@@ -28,10 +19,22 @@
 </div>
 
 <div style="margin: 20px; display: flex; align-items: center;">
-    <img src="/about/tobias_haeusser.jpg" alt="Tobias Häusser" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <img src="/docs/about/dominik_neumann.jpg" alt="Dominik Neumann" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
+    <div>
+        <h3>Dominik Neumann</h3>
+        <p><strong>Senior Lösungs-Architekt im Bereich Public | Partner bei <a href="https://www.exxeta.com"> Exxeta </a> </strong></p>
+        <p>Mit mehr als 30 Jahren Erfahrung in verschiedenen IT-Rollen - als Software-Architekt, Transformations-Experte und Business-Manager - hat Dominik Neumann besondere Erfahrung als Enterprise-Architekt in der Data- und Business-Driven IT Modernisierung & IT-Strategie. Er ist Berater und Data Scientist in Modernisierungsprojekten mit Fokus auf dem Alignement zwischen organisationalem Schnitt und Architektur. Seine Schwerpunkte liegen im Bereich der Analyse großer monolithischer Systeme und Anwendungslandschaften, in der Ableitung von Strategien und Maßnahmen zur fachlichen und technologischen Modernisierung, sowie in der Identifikation und Implementierung notwendiger Veränderungen.</p>
+        Kontaktaufnahme gerne via <a href="https://www.linkedin.com/in/dominik-neumann/"> LinkedIn </a>
+    </div>
+</div>
+
+<div style="margin: 20px; display: flex; align-items: center;">
+    <img src="/docs/about/tobias_haeusser.jpg" alt="Tobias Häusser" style="width: 150px; height: auto; border-radius: 50%; margin-right: 20px;">
     <div>
         <h3>Tobias Häusser</h3>
-        <p><strong>Senior Programmleiter im Bereich Public</strong></p>
+        <p><strong>Senior Programmleiter im Bereich Public bei <a href="https://www.exxeta.com"> Exxeta </a> </strong></p>
         <p>Tobias Häusser bringt über 20 Jahre Erfahrung im IT-Produktmanagement und Projektmanagement mit, insbesondere im öffentlichen Dienst. Seine Stationen umfassen Schlüsselpositionen bei dem Deutschen Sparkassenverlag, adesso und der IT-Behörde des Landes Baden-Württemberg. Bereits 2011 forschte er im EU-Projekt FIRST, wo er unstrukturierte Finanzmarktdaten analysierte. Diese Erfahrungen flossen ein in die Veröffentlichung des Papers "Extracting Investor Sentiment from Weblog Texts: A Knowledge-based Approach." Tobias ist diplomierter Informatiker und Experten in Softwarearchitektur, der innovative Lösungen für die digitale Transformation im öffentlichen Sektor entwickelt.</p>
+        Kontaktaufnahme gerne via <a href="https://www.linkedin.com/in/tobias-haeusser/"> LinkedIn
+    
     </div>
 </div>

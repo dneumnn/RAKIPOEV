@@ -30,7 +30,7 @@ nav:
       - Vom Einfachen zum Komplexen: docs/use_cases/simple_to_complex.md
     - Referenzimplementierung: docs/implementation/implementation.md
     - Glossar: docs/glossar.md
-    - About: docs/requirements/about.md
+    - About: docs/about/about.md
 
 theme:
   name: material
