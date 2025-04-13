@@ -203,7 +203,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../allgemeine_anforderungen/" class="md-tabs__link">
+        <a href="../../../requirements/allgemeine_anforderungen/" class="md-tabs__link">
           
   
   Anforderungen
@@ -275,41 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../implementation/implementation/" class="md-tabs__link">
-        
-  
-    
-  
-  Referenzimplementierung
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../glossar/" class="md-tabs__link">
-        
-  
-    
-  
-  Glossar
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../about/" class="md-tabs__link">
+      <a href="../../../about/about/" class="md-tabs__link">
         
   
     
@@ -441,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../allgemeine_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/allgemeine_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ki_prinzipien/" class="md-nav__link">
+      <a href="../../../requirements/ki_prinzipien/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../funktionale_anforderungen/" class="md-nav__link">
+      <a href="../../../requirements/funktionale_anforderungen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../security/" class="md-nav__link">
+      <a href="../../../requirements/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1088,47 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../implementation/implementation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Referenzimplementierung
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../glossar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossar
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,9 +1090,11 @@
 <h2 id="microsoft-office-201620192024">Microsoft Office 2016/2019/2024</h2>
 <p>Bei diesen Office-Version wird unter Verwendung der Visual Studio Tools for Office (VSTO) ein VSTO-Add-in auf Basis des .Net-Fameworks erstellt. Für das zugehörige GUI wird WPF (Windows Presentation Foundation) eingesetzt, dass ein responives Design unterstützt.</p>
 <h2 id="office-365">Office 365</h2>
-<p>Plugins für Office 365 basieren grundsätzlich auf HTML, CSS und Javascript.</p>
+<p>Im Gegensatz zu früheren Office-Integration sind Plugins für Office 365 grundsätzlich Web-Addins, die auf HTML, CSS und JavaScript basieren. Die Konfiguration und Integration in das Office User Interface erfolgt über die Manifest-Datei. Der Plugin-Code wird innerhalb einer Sandbox als Browser- bzw. WebView-Control ausgeführt.</p>
 <h2 id="libreoffice-collabora-online">LibreOffice / Collabora Online</h2>
+<p>Plugins werde in LibreOffice als Extensions entwickelt. Sie basieren vorzugsweise auf sogenannten UNO-Komponenten (Universal Network Objects), die innerhalb von LibreOffice mittels der durch UNO bereitgestellten Kommunikationsmechanismen verwendet werden können.</p>
 <h2 id="onlyoffice-desktop-editor-document-server">OnlyOffice Desktop Editor / Document Server</h2>
+<p>Plugins für OnlyOffice werden sowohl für den Desktop Editor als auch für den Web Editor in Javascript erstellt. Das Plugin besteht aus mindestens einer Konfigurationsdatei (config.json), die alle Daten zur Registrierung des Plugins in OnlyOffice enthält, einer HTML-Datei (index.html) mit dem Aufrufbefehl für den Plugin-Code sowie dem Plugin-Programm (pluginCode.js). Das Plugin besitzt seinen eigenen iframe, in dem das Plugin wirken kann.</p>
 
 
 

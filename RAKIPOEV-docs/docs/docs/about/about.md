@@ -34,7 +34,7 @@
         <h3>Tobias Häusser</h3>
         <p><strong>Senior Programmleiter im Bereich Public bei <a href="https://www.exxeta.com"> Exxeta </a> </strong></p>
         <p>Tobias Häusser bringt über 20 Jahre Erfahrung im IT-Produktmanagement und Projektmanagement mit, insbesondere im öffentlichen Dienst. Seine Stationen umfassen Schlüsselpositionen bei dem Deutschen Sparkassenverlag, adesso und der IT-Behörde des Landes Baden-Württemberg. Bereits 2011 forschte er im EU-Projekt FIRST, wo er unstrukturierte Finanzmarktdaten analysierte. Diese Erfahrungen flossen ein in die Veröffentlichung des Papers "Extracting Investor Sentiment from Weblog Texts: A Knowledge-based Approach." Tobias ist diplomierter Informatiker und Experten in Softwarearchitektur, der innovative Lösungen für die digitale Transformation im öffentlichen Sektor entwickelt.</p>
-        Kontaktaufnahme gerne via <a href="https://www.linkedin.com/in/tobias-haeusser/"> LinkedIn
+        Kontaktaufnahme gerne via <a href="https://www.linkedin.com/in/tobias-haeusser/"> LinkedIn </a>
     
     </div>
 </div>
