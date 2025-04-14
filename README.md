@@ -1,6 +1,6 @@
 # Referenzarchitektur KI-Plattform für die Öffentliche Verwaltung
 
-Dieses Repo beinhaltet das Proposal (bzw. Exposee) für die Referenzarchitektur **KI-Plattform für die Öffentliche Verwaltung**
+Dieses Repo beinhaltet ein Exposee für die Referenzarchitektur **KI-Plattform für die Öffentliche Verwaltung**
 
 RAKIPOEV ist der Arbeitsname für das Exposee.
 
