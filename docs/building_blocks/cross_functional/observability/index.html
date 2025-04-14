@@ -1179,7 +1179,7 @@
 <li>Ausgaben (Response)</li>
 </ul>
 <p><img alt="image" src="../observability.png" /></p>
-<p>Dabei ist es relevant nicht nur Eingabe uns Ausgabe zu loggen, sondern auch den internen Status von KI-Systemen zu überwachen und damit zu verstehen wie die Eingabe in die Ausgabe vom KI-System transformiert wird.</p>
+<p>Dabei ist es relevant, nicht nur Eingabe uns Ausgabe zu loggen, sondern auch den internen Status von KI-Systemen zu überwachen und damit zu verstehen, wie die Eingabe in die Ausgabe vom KI-System transformiert wird.</p>
 <p>Grundsätzlich werden folgende Daten unterschieden:</p>
 <ul>
 <li>Metriken</li>
@@ -1240,8 +1240,8 @@
 </table>
 <p>Ziel ist es einen Observability Stack bereitzustellen, den alle wesentlichen Komponenten der KI Referenzarchitektur nutzen: Frontend, Services, LLM-Gateway und Inference Engines. Dabei werden Instrumentalisierung, Annotation (Dekoration) und Callbacks genutzt.  </p>
 <h2 id="opentelemetry">OpenTelemetry</h2>
-<p><a href="https://opentelemetry.io">OpenTelemetry</a> ist eine open source Initiative, die eine Sammlung von APIs, SDKs und tools als Observability Framework bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.</p>
-<p>Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentarisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.</p>
+<p><a href="https://opentelemetry.io">OpenTelemetry</a> ist eine Open-Source-Initiative, die eine Sammlung von APIs, SDKs und tools als Observability Framework bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.</p>
+<p>Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentalisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.</p>
 <p><img alt="OpenTelemetry" src="../opentelemetry.png" /></p>
 <p>Aktuell ist ein Projekt in Gange, das innerhalb von OpenTelemetrie  <a href="https://github.com/open-telemetry/community/blob/main/projects/gen-ai.md">Generative AI Observability</a> standardisiert.</p>
 <h2 id="metriken">Metriken</h2>
@@ -1276,10 +1276,10 @@
 <p>Die OpenTelemetry-native Observability hat den Fokus auf Ende-zu-Ende Monitoring inklusive LLMs, Vektor Datenbanken, RAG &amp; Agent Frameworks und GPUs.</p>
 <p>Openlit folgt den <a href="https://github.com/open-telemetry/semantic-conventions/tree/main/docs/gen-ai">Semantic Conventions von OpenTelemetry</a>.</p>
 <h4 id="openllmetry">OpenLLMetry</h4>
-<p>OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an an beliebige Observability-Lösungen, welche auf OpenTelemetry aufsetzen angeschlossen werden.</p>
+<p>OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an beliebige Observability-Lösungen, welche auf OpenTelemetry aufsetzen, angeschlossen werden.</p>
 <h4 id="langfuse">Langfuse</h4>
 <p>Langfuse ist eine Open Source Engineering Plattform für das Tracen und Evaluieren von LLM-Anwendungen. Es unterstützt zusätzlich durch ein Prompt-Management. Langfuse ist zwar Open Source, aber nur bedingt <a href="https://github.com/langfuse/langfuse?tab=License-1-ov-file#readme">frei</a> nutzbar. Teile von Langfuse stehen unterliegen einer kommerziellen Lizenz.</p>
-<p>Langfuse kann it und ohne OpenTelemetry Unterstützung verwendet werden.</p>
+<p>Langfuse kann mit und ohne OpenTelemetry Unterstützung verwendet werden.</p>
 <h3 id="metrik-suiten">Metrik-Suiten</h3>
 <ul>
 <li><a href="https://github.com/explodinggradients/ragas">ragas</a></li>

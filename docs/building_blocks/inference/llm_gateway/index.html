@@ -1080,18 +1080,18 @@
 <p>Das LLM-Gateway liefert eine einheitliche Schnittstelle zu LLMs. Es unterstützt das <a href="https://platform.openai.com/docs/overview">OpenAI API</a> und erfüllt folgende Aufgaben innerhalb der Plattform.</p>
 <h2 id="anforderungen">Anforderungen</h2>
 <ul>
-<li>zu Verfügungstellung der OpenAI API /v1/chat/completions und /v1/embedding für Chat und Vector-Embeddings.</li>
-<li>Routing der Anfragen auf verschiedene On-Premise Inference Backends (Inference Engines) oder öffentliche Modell Anbieter.</li>
+<li>zu Verfügungstellung der OpenAI API /v1/chat/completions und /v1/embedding für Chat und Vector-Embeddings</li>
+<li>Routing der Anfragen auf verschiedene On-Premise Inference Backends (Inference Engines) oder öffentliche Modell Anbieter</li>
 <li>Load Balancing</li>
-<li>Verwaltung von Berechtigungen auf Organisation, Team und Benutzer-Ebene für die Nutzung von Modellen.</li>
-<li>Autorisierung (darf Modell vom Anfragenden Client genutzt werden?)</li>
-<li>Tracking des Token-Verbrauchs bzw. der Kosten: sowohl der Input- als auch der Output-Tokens.</li>
+<li>Verwaltung von Berechtigungen auf Organisation, Team und Benutzer-Ebene für die Nutzung von Modellen</li>
+<li>Autorisierung (darf das Modell vom anfragenden Client genutzt werden?)</li>
+<li>Tracking des Token-Verbrauchs bzw. der Kosten: sowohl der Input- als auch der Output-Tokens</li>
 <li>Überprüfen von Rate Limits (request per minute, tokens per minute)</li>
 <li>Callbacks (Anbindung von LLM-Engineering Plattformen, wie z.B. Langfuse)</li>
 <li>Logging: Anbindung von Log-Providern</li>
 <li>Post-Processing (zur Integration von z.B. Guardrails)</li>
 <li>Streaming und Unterstützung für asynchrone Anfragen</li>
-<li>Fehler-Management mittels Fallbacks: Automatischer Retry, ...  </li>
+<li>Fehler-Management mittels Fallbacks: Automatischer Retry, ...</li>
 </ul>
 <h2 id="architektur">Architektur</h2>
 <p><img alt="image" src="../llm_gateway.png" /></p>
