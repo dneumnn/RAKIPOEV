@@ -53,7 +53,7 @@ Nicht jede Inference Engine kann jedes Modell Speicher-Format verwenden.
 
 ### Ollama
 
-[Ollama](https://ollama.com) ist ein in der Programmiersprache Go programmierter OpenAI kompatibler Server, der die Inference Engine [llama.cpp](https://github.com/ggerganov/llama.cpp) nutzt. llama.cpp ist eine in C/C++ geschriebene Inference Engine. llama.cpp kann Modelle ausführen, weclhe im [GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) Dateiformat vorliegen. GGUF ist ein binäres Dateifomat für Inference mit der Tensor-Bibliothek für maschinelles Lernen [GGML](https://github.com/ggml-org/ggml).
+[Ollama](https://ollama.com) ist ein in der Programmiersprache Go programmierter OpenAI kompatibler Server, der die Inference Engine [llama.cpp](https://github.com/ggerganov/llama.cpp) nutzt. llama.cpp ist eine in C/C++ geschriebene Inference Engine. llama.cpp kann Modelle ausführen, welche im [GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) Dateiformat vorliegen. GGUF ist ein binäres Dateiformat für Inference mit der Tensor-Bibliothek für maschinelles Lernen [GGML](https://github.com/ggml-org/ggml).
 
 
 ### llama-cpp-python

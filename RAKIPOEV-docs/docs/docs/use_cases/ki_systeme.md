@@ -1,10 +1,10 @@
 # KI Systeme und Use Cases
 
-Gemäß der KI-Definition des Europäischen Parllaments ist
+Gemäß der KI-Definition des Europäischen Parlaments ist
 
 > [Künstliche Intelligenz die Fähigkeit einer Maschine, menschliche Fähigkeiten wie logisches Denken, Lernen, Planen und Kreativität zu imitieren.](https://www.europarl.europa.eu/topics/de/article/20200827STO85804/was-ist-kunstliche-intelligenz-und-wie-wird-sie-genutzt)
 
-Aufbauend auf obiger Definition teilen wir KI Systeme in drei Kathegorien ein. Sie weisen unterschiedliche Fähigkeiten auf, die bei der Umsetzung von KI Use Cases von Bedeutung sind.
+Aufbauend auf obiger Definition teilen wir KI-Systeme in drei Kategorien ein. Sie weisen unterschiedliche Fähigkeiten auf, die bei der Umsetzung von KI Use Cases von Bedeutung sind.
 
 <img src="../ki_systeme.png" width="600" height="600" />
 
@@ -22,7 +22,7 @@ Conversational AI bezieht sich somit auf Technologien, die es Maschinen ermögli
 
 - Lernfähigkeit: Viele Conversational-AI-Systeme nutzen maschinelles Lernen, um aus Interaktionen zu lernen und ihre Antworten im Laufe der Zeit zu verbessern.
 
-Conversational AI Use Cases sind oft horizontale Use Cases, die auf eine breite Benutergruppe zugeschnitten sind. Das Dialogmanagement (Chat Frontend) ist von zentraler Bedeutung. Es wird häufig mit einem starken LLM und einem RAG kombiniert, um intelligente Auskunftssysteme zu erstellen. 
+Conversational AI Use Cases sind oft horizontale Use Cases, die auf eine breite Benutzergruppe zugeschnitten sind. Das Dialogmanagement (Chat Frontend) ist von zentraler Bedeutung. Es wird häufig mit einem starken LLM und einem RAG kombiniert, um intelligente Auskunftssysteme zu erstellen. 
 
 ## Copilot
 
@@ -32,7 +32,7 @@ Er muss folgende Fähigkeiten besitzen:
 
 - Antizipation der Intensionen des Bernutzers: Copiloten können Benutzerbedürfnisse vorhersehen und proaktiv Vorschläge oder Erinnerungen auf der Grundlage von Mustern und früheren Interaktionen anbieten.
 
-- Teilen des Arbeistgedächtnisses: Copiloten können große Mengen an Daten analysieren und Erkenntnisse liefern, die den Nutzern helfen, fundierte Entscheidungen auf der Grundlage von Daten zu treffen.
+- Teilen des Arbeitsgedächtnisses: Copiloten können große Mengen an Daten analysieren und Erkenntnisse liefern, die den Nutzern helfen, fundierte Entscheidungen auf der Grundlage von Daten zu treffen.
 
 - Kontextbezogenes Verstehen: Copiloten können den Kontext einer Aufgabe oder eines Gesprächs verstehen, so dass sie relevante Vorschläge oder Informationen liefern können.
 
@@ -48,7 +48,7 @@ Ein Copilot kann ein Fachverfahren um KI Services erweitern. Dabei assistiert de
 
 Systeme zur Lösung von Problemen, bei denen mehrere autonome Agenten interagieren und zusammenarbeiten, um bestimmte Ziele zu erreichen, nennen wir Multi-Agent Problem Solver.  
 
-- Agenten: Jeder Agent arbeitet unabhängig, mit eigenen Zielen, eigenem Wissen und eigenen Entscheidungsfähigkeiten. Sie sind speialisierte Softwareprogramme.
+- Agenten: Jeder Agent arbeitet unabhängig, mit eigenen Zielen, eigenem Wissen und eigenen Entscheidungsfähigkeiten. Sie sind spezialisierte Softwareprogramme.
 
 - Planung: In der Regeln ist ein Agent für die Planung zur Lösungsfindung verantwortlich. Er muss den Problem-Kontext verstehen und eine Lösungsstrategie entwickeln, um dann andere spezialisierte Agenten mit Aufgaben zu versehen.
 
@@ -56,7 +56,7 @@ Systeme zur Lösung von Problemen, bei denen mehrere autonome Agenten interagier
 
 - Kommunikation: Effektive Kommunikationsprotokolle sind entscheidend für Agenten, um Informationen auszutauschen, zu verhandeln und gemeinsame Entscheidungen zu treffen.
 
-- Verteiltes Lösen von Problemen: Multiagentensysteme verteilen den Problemlösungsprozess und ermöglichen so Skalierbarkeit und Flexibilität.  Dies ist besonders in dynamischen Umgebungen nützlich, in denen sich die Bedingungen schnell ändern.
+- Verteiltes Lösen von Problemen: Multiagentensysteme verteilen den Problemlösungsprozess und ermöglichen so Skalierbarkeit und Flexibilität. Dies ist besonders in dynamischen Umgebungen nützlich, in denen sich die Bedingungen schnell ändern.
 
 - Lösung von Konflikten: Agenten können konkurrierende Interessen oder Ziele haben, was Konfliktlösungsstrategien erforderlich macht, um einen Konsens oder eine optimale Lösung zu erreichen.
 

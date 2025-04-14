@@ -3,7 +3,7 @@
 Die Entwicklung von Office-Plugins unterscheidet sich je nach verwendetem Produkt und ggf. auch bzgl. der eingesetzten Produktversion.
 
 ## Microsoft Office 2016/2019/2024
-Bei diesen Office-Version wird unter Verwendung der Visual Studio Tools for Office (VSTO) ein VSTO-Add-in auf Basis des .Net-Fameworks erstellt. Für das zugehörige GUI wird WPF (Windows Presentation Foundation) eingesetzt, dass ein responives Design unterstützt.
+Bei diesen Office-Version wird unter Verwendung der Visual Studio Tools for Office (VSTO) ein VSTO-Add-in auf Basis des .Net-Fameworks erstellt. Für das zugehörige GUI wird WPF (Windows Presentation Foundation) eingesetzt, dass ein responsives Design unterstützt.
 
 ## Office 365
 Im Gegensatz zu früheren Office-Integration sind Plugins für Office 365 grundsätzlich Web-Addins, die auf HTML, CSS und JavaScript basieren. Die Konfiguration und Integration in das Office User Interface erfolgt über die Manifest-Datei. Der Plugin-Code wird innerhalb einer Sandbox als Browser- bzw. WebView-Control ausgeführt.

@@ -1,6 +1,6 @@
 # Services
 
-Services sind zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Ziel ist es diese für die unterschiedlichen Use cases der öffentlichen Verwaltung wiederzuverwenden. Um dieses Ziel zu erreichen ist es notwendig, die Services nach einheitlichen Standards zu entwickeln, sie mit einem API zu versehen (über das sie gleichartig aufgerufen werden können) und als containerisierte Komponenten auszuliefern.
+Services sind zustandslose funktionale Bausteine die sich zu Use Cases kombinieren lassen. Ziel ist es, diese für die unterschiedlichen Use cases der öffentlichen Verwaltung wiederzuverwenden. Um dieses Ziel zu erreichen ist es notwendig, die Services nach einheitlichen Standards zu entwickeln, sie mit einem API zu versehen (über das sie gleichartig aufgerufen werden können) und als containerisierte Komponenten auszuliefern.
 
 Wir unterscheiden vier Service Typen:
 
@@ -12,7 +12,7 @@ Ein Task ist ein Model-Task-driven Service. Hierbei wird eine spezifische Aufgab
 
 Ein Vielzahl von Model-Tasks und geeignete Modell finden sich auf [Hugging Face](https://huggingface.co/tasks).
 
-Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z.B. Text Manipulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.
+Eine große Anzahl der in den Anforderungen beschriebenen Use Cases, wie z. B. Text Manipulationen oder Translationen, lassen sich mit einem geeigneten Modell als Tasks umsetzen.
 
 ![image](task.png)
 
@@ -34,9 +34,9 @@ Mithilfe des Model Context Protokolls (MCP) lassen sich verschiedene Datenquelle
 
 ## Retrieval-Augmented-Generation
 
-Retrieval-Augmented-Generation (kurz RAG ist ein komplexer Service, bei dem zu einem Prompt (Anfrage des Benutzers) Wissen aus vorhandenen Datenquellen selektiert, von dem man ausgeht, dass es als Faktenwissen in einem LLM nicht vorhanden ist. Der Prompt wird um das selektierte Wissen erweitert. Sowohl für das Retrieval, als auch für das Augmentation gibt es zahl reiche Umsetzungs-Muster, die innerhalb eines RAG angewandt werden können, um das gewünschte Ergebnis zu erzeugen.
+Retrieval-Augmented-Generation (kurz RAG ist ein komplexer Service, bei dem zu einem Prompt (Anfrage des Benutzers) Wissen aus vorhandenen Datenquellen selektiert, von dem man ausgeht, dass es als Faktenwissen in einem LLM nicht vorhanden ist. Der Prompt wird um das selektierte Wissen erweitert. Sowohl für das Retrieval, als auch für das Augmentation gibt es zahlreiche Umsetzungsmuster, die innerhalb eines RAG angewandt werden können, um das gewünschte Ergebnis zu erzeugen.
 
-Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-Datenbanken und Indexe (BM25) eingesetzt. Der Einsatz eines RAG bedingt einer vorgelagert Data-Pipeline, mithilfe derer man das Wissen geeignet aufbereitet in die ausgewählte Datenquelle überführt.
+Als Datenquellen werden je Aufgabe Vektor-Datenbanken, Graphen-Datenbanken, SQL-Datenbanken und Indexe (BM25) eingesetzt. Der Einsatz eines RAG bedingt einer vorgelagerten Data-Pipeline, mithilfe derer man das Wissen geeignet aufbereitet in die ausgewählte Datenquelle überführt.
 
 ![image](rag.png)
 
@@ -47,7 +47,7 @@ RAG hat sich in den letzten zwei Jahres von einer einfachen Suche basierend auf 
 |RAG|Lizenz|Einsatzzweck|Skalierbarkeit|
 |---|----|------------------|--|
 |[GraphRAG](https://microsoft.github.io/graphrag/) [Arxiv](https://arxiv.org/pdf/2404.16130)|MIT Licence       |Produktion|--|
-|Idee:|GraphRag basierte Ansätze nutzen strukturiertes Wissen. Dazu muss das Wissen im Vorfeld aus den Daten extrahiert und in Form eines Wissensgraphen aufbereitet werden. Auf einen Wissensgraphen gespeichert in einer Graphendatenbank kann mittels Cipher-Abfragen zugegriffen werden. Hierzu muss die vom Nutzer des RAG gestellte Frage mittels LLM in eine geeigente Cipher-Abfrage umgewandelt werden. Das bedeutet, dass aus der Frage des Benutzers Entitäten und Beziehungen extrahiert werden, um damit in die Wissensdatenbank zu suchen. GraphRag setzt zusätzlch das Leiden Community Detection Clustering-Verfahren ein, um Knoten im Wissengraphen zu clustern. Auf diese Weise werden zusätzliche Knoten erzeugt, welche mit einer Zusammenfassung versehen werden. Dies ermöglicht sowohl eine lokale Suche (Knoten im Wissensgraph) als auch eine globale Suche (Cummunities).|Vor- und Nachteile: GraphRags neigen zu Information-Overflow, also zu viele Informationen als Antwort zu liefern. Zudem ist die Aufbereitung des Wissensgraph in der Regel ein kostspieliger Prozess. Von Vorteil ist, dass die Aufbereitung inkrementell erfolgen kann.||
+|Idee:|GraphRag basierte Ansätze nutzen strukturiertes Wissen. Dazu muss das Wissen im Vorfeld aus den Daten extrahiert und in Form eines Wissensgraphen aufbereitet werden. Auf einen Wissensgraphen gespeichert in einer Graphendatenbank kann mittels Cipher-Abfragen zugegriffen werden. Hierzu muss die vom Nutzer des RAG gestellte Frage mittels LLM in eine geeignete Cipher-Abfrage umgewandelt werden. Das bedeutet, dass aus der Frage des Benutzers Entitäten und Beziehungen extrahiert werden, um damit in die Wissensdatenbank zu suchen. GraphRag setzt zusätzlch das Leiden Community Detection Clustering-Verfahren ein, um Knoten im Wissengraphen zu clustern. Auf diese Weise werden zusätzliche Knoten erzeugt, welche mit einer Zusammenfassung versehen werden. Dies ermöglicht sowohl eine lokale Suche (Knoten im Wissensgraph) als auch eine globale Suche (Cummunities).|Vor- und Nachteile: GraphRags neigen zu Information-Overflow, also zu viele Informationen als Antwort zu liefern. Zudem ist die Aufbereitung des Wissensgraph in der Regel ein kostspieliger Prozess. Von Vorteil ist, dass die Aufbereitung inkrementell erfolgen kann.||
 |[LigthRAG](https://github.com/HKUDS/LightRAG) [Arxiv](https://arxiv.org/pdf/2410.05779)|MIT Licence|Vor-Produktion||
 |Idee:| LightRAG implementiert einen Index-Graph (als Wissensgraph), um damit die Performanz zu verbessern. In einem Deduplication-Schritt werden zudem redundante Knoten und Kanten zusammengeführt. Durch die Kombination von Graphenstrukturen mit Vektordarstellungen wird ein tieferen Einblick in die Zusammenhänge zwischen den Entitäten gewährt. Dies ermöglicht es dem Suchalgorithmus, sowohl lokale als auch globale Schlüsselwörter effektiv zu nutzen. Dadurch wird der Suchprozess effizienter und die Relevanz der Ergebnisse verbessert.|||
 |[Haystack (deepset-ai)](https://github.com/deepset-ai/haystack) |Apache License 2.0|Produktion|Ausgelegt für die Bearbeitung großer Dokumentenbestände|
@@ -73,7 +73,7 @@ Ein Agent ist ein Service, der autonom oder semi-autonom eine Aufgabe erfüllt. 
 KI-Agenten-Frameworks können anhand zwei unterschiedlichen Kriterien bewertet werden:
 
 1. Grad an Abstraktionsschichten auf denen sie aufbauen
-2. Automatisierungs-Autonomie. Wie stark werden Arbeitsabläufe vergegeben bzw. dürfen diese durch das LLM bestimmt werden.
+2. Automatisierungs-Autonomie. Wie stark werden Arbeitsabläufe vorgegeben bzw. dürfen diese durch das LLM bestimmt werden.
 
 Im Folgenden wollen wir zwischen Agenten Frameworks, welche den Fokus auf den Agenten legen und die Steuerung bzw. Collaboration der Agenten unterscheiden.
 

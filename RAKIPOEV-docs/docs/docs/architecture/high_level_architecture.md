@@ -38,7 +38,7 @@ Der Services-Layer beinhaltet zustandslose funktionale Bausteine, die sich zu Us
 
 Folgende erste Servicearten sind identifiziert:
 
-- **RAG:** Über [RAGs](../glossar.md#RAG) können mit Hilfe domänen-spezifische Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z.B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
+- **RAG:** Über [RAGs](../glossar.md#RAG) können mit Hilfe domänen-spezifischer Datenquellen die Antworten für einen bestimmten Kontext verbessert werden. Die RAGs können z. B. mit RAGFlow umgesetzt werden. *Beispiel: der Service "DocumentSearch".*
 
 - **MCP-Server** bieten einen standardisierten Zugang zu verschiedenen Datenquellen, Prompt-Templates sowie nachfolgend beschriebenen Tools.
 

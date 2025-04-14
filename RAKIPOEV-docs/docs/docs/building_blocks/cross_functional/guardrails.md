@@ -14,10 +14,10 @@ Input-Guardrails bieten Schutz vor folgenden Risiken:
 
 Output-Guardrails bieten Schutz vor folgenden Risiken:
 
-- Fehlgeschlagende Prompts und falscghe Antworten
+- Fehlgeschlagende Prompts und falsche Antworten
 - Toxische Antworten
 - Halluzinationen
-- Sensitive Informationen (asu RAG Systemen), die nicht öffentlich gemacht werden dürfen
+- Sensitive Informationen (aus RAG Systemen), die nicht öffentlich gemacht werden dürfen
 
 ## Open-Source-Ansätze für Guardrails:
 

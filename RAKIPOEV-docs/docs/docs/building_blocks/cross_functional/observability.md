@@ -14,7 +14,7 @@ Dazu ist es wichtig kontinuierlich Daten zu sammeln und zu analysieren:
 
 ![image](observability.png)
 
-Dabei ist es relevant nicht nur Eingabe uns Ausgabe zu loggen, sondern auch den internen Status von KI-Systemen zu überwachen und damit zu verstehen wie die Eingabe in die Ausgabe vom KI-System transformiert wird.
+Dabei ist es relevant, nicht nur Eingabe uns Ausgabe zu loggen, sondern auch den internen Status von KI-Systemen zu überwachen und damit zu verstehen, wie die Eingabe in die Ausgabe vom KI-System transformiert wird.
 
 Grundsätzlich werden folgende Daten unterschieden:
 
@@ -39,9 +39,9 @@ Ziel ist es einen Observability Stack bereitzustellen, den alle wesentlichen Kom
 
 ## OpenTelemetry
 
-[OpenTelemetry](https://opentelemetry.io) ist eine open source Initiative, die eine Sammlung von APIs, SDKs und tools als Observability Framework bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.
+[OpenTelemetry](https://opentelemetry.io) ist eine Open-Source-Initiative, die eine Sammlung von APIs, SDKs und tools als Observability Framework bereitstellt, um standardisiert zielgerichtete Observability zu ermöglichen.
 
-Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentarisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.
+Damit können dann Telemetrie Daten (Logs, Metriken, Traces) instrumentalisiert, erzeugt, gesammelt und exportiert werden, um die Performanz und das Verhalten von Software zu analysieren.
 
 ![OpenTelemetry](opentelemetry.png)
 
@@ -88,13 +88,13 @@ Openlit folgt den [Semantic Conventions von OpenTelemetry](https://github.com/op
 
 #### OpenLLMetry
 
-OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an an beliebige Observability-Lösungen, welche auf OpenTelemetry aufsetzen angeschlossen werden.
+OpenLLMetry ist eine Open Source (Apache 2.0 Lizenz) Erweiterung von OpenTelemetry für LLM-Anwendungen. Da es unter der Haube OpenTelemetry verwendet, kann an beliebige Observability-Lösungen, welche auf OpenTelemetry aufsetzen, angeschlossen werden.
 
 #### Langfuse
 
 Langfuse ist eine Open Source Engineering Plattform für das Tracen und Evaluieren von LLM-Anwendungen. Es unterstützt zusätzlich durch ein Prompt-Management. Langfuse ist zwar Open Source, aber nur bedingt [frei](https://github.com/langfuse/langfuse?tab=License-1-ov-file#readme) nutzbar. Teile von Langfuse stehen unterliegen einer kommerziellen Lizenz.
 
-Langfuse kann it und ohne OpenTelemetry Unterstützung verwendet werden.
+Langfuse kann mit und ohne OpenTelemetry Unterstützung verwendet werden.
 
 ### Metrik-Suiten
 

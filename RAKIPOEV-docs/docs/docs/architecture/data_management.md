@@ -1,6 +1,6 @@
 # Datenmanagement
 
-Eine Implementierung unter Zuhilfenahme von open-source Komponenten, setzt ein föderiertes Datenmanagement voraus.
+Eine Implementierung unter Zuhilfenahme von Open-Source-Komponenten, setzt ein föderiertes Datenmanagement voraus.
 
 Das Datenmanagement umfasst dabei auf folgende Aspekte:
 
